@@ -10,19 +10,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.5.9",
-    "php-http/client-implementation": "^1.0",
     "psr/log": "^1.0.1",
-    "php-http/message-factory": "v1.0.2",
-    "php-http/discovery": "v1.0.0",
-    "besimple/soap-client": "0.2.*@dev",
-    "wsdl2phpgenerator/wsdl2phpgenerator" : "*"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "4.5.*",
-    "php-http/message": "v1.3.1",
-    "guzzlehttp/guzzle": "6.2.1",
-    "php-http/guzzle6-adapter": "*",
-    "symfony/var-dumper": "v3.1.4",
     "mashape/unirest-php": "3.*"
   },
   "autoload": {
