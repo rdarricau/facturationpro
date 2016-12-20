@@ -1,6 +1,6 @@
 {
   "name": "rdarricau/facturationpro",
-  "description": "Librairie PHP pour interagir avec l'api de FacturationPro",
+  "description": "Librairie PHP pour interagir avec l'api de Facturation.pro",
   "authors": [
     {
       "name": "Rémi Darricau",
@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "FacturationPro\\": "src/"
+      "Facturationpro\\": "src/"
     }
   }
 }
