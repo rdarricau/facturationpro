@@ -4,16 +4,14 @@ class FacturationPro {
     
     public $apikey;
     public $ch;
-    public $root = 'https://mandrillapp.com/api/1.0';
+    public $root = 'https://www.facturation.pro/firms/';
     public $debug = false;
 
     public function __construct($apikey=null) {
-        if(!$apikey) $apikey = getenv('FACTURATIONPRO_APIKEY');
         if(!$apikey) throw new Error('You must provide an API key');
         $this->apikey = $apikey;
 
         $this->ch = curl_init();
-        curl_setopt($this->ch, CURLOPT_USERAGENT, 'Mandrill-PHP/1.0.55');
         curl_setopt($this->ch, CURLOPT_POST, true);
         curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($this->ch, CURLOPT_HEADER, false);
@@ -23,21 +21,16 @@ class FacturationPro {
 
         $this->root = rtrim($this->root, '/') . '/';
 
-        $this->templates = new Mandrill_Templates($this);
-        $this->exports = new Mandrill_Exports($this);
-        $this->users = new Mandrill_Users($this);
-        $this->rejects = new Mandrill_Rejects($this);
-        $this->inbound = new Mandrill_Inbound($this);
-        $this->tags = new Mandrill_Tags($this);
-        $this->messages = new Mandrill_Messages($this);
-        $this->whitelists = new Mandrill_Whitelists($this);
-        $this->ips = new Mandrill_Ips($this);
-        $this->internal = new Mandrill_Internal($this);
-        $this->subaccounts = new Mandrill_Subaccounts($this);
-        $this->urls = new Mandrill_Urls($this);
-        $this->webhooks = new Mandrill_Webhooks($this);
-        $this->senders = new Mandrill_Senders($this);
-        $this->metadata = new Mandrill_Metadata($this);
+        $this->account = new Facturationpro_Account($this);
+        $this->assets = new Facturationpro_Assets($this);
+        $this->categories = new Facturationpro_Categories($this);
+        $this->customers = new Facturationpro_Customers($this);
+        $this->followups = new Facturationpro_Followups($this);
+        $this->invoices = new Facturationpro_Invoices($this);
+        $this->products = new Facturationpro_Products($this);
+        $this->purchases = new Facturationpro_Purchases($this);
+        $this->quotes = new Facturationpro_Quotes($this);
+        $this->suppliers = new Facturationpro_Suppliers($this);
     }
 
     public function __destruct() {
@@ -73,10 +66,10 @@ class FacturationPro {
         $this->log('Got response: ' . $response_body);
 
         if(curl_error($ch)) {
-            throw new Mandrill_HttpError("API call to $url failed: " . curl_error($ch));
+            throw new Error("API call to $url failed: " . curl_error($ch));
         }
         $result = json_decode($response_body, true);
-        if($result === null) throw new Mandrill_Error('We were unable to decode the JSON response from the Mandrill API: ' . $response_body);
+        if($result === null) throw new Error('We were unable to decode the JSON response from the FacturationPro API: ' . $response_body);
         
         if(floor($info['http_code'] / 100) >= 4) {
             throw $this->castError($result);
