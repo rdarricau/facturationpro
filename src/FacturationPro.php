@@ -1,5 +1,16 @@
 <?php
 
+require_once "FacturationPro/Account.php";
+require_once "FacturationPro/Assets.php";
+require_once "FacturationPro/Categories.php";
+require_once "FacturationPro/Customers.php";
+require_once "FacturationPro/Followups.php";
+require_once "FacturationPro/Invoices.php";
+require_once "FacturationPro/Products.php";
+require_once "FacturationPro/Purchases.php";
+require_once "FacturationPro/Quotes.php";
+require_once "FacturationPro/Suppliers.php";
+
 class FacturationPro {
     
     public $apikey;
