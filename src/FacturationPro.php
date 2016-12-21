@@ -32,7 +32,6 @@ class FacturationPro {
         $this->mail = $mail;
 
         $this->ch = curl_init();
-        curl_setopt($this->ch, CURLOPT_POST, true);
         curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($this->ch, CURLOPT_HEADER, false);
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
@@ -59,14 +58,19 @@ class FacturationPro {
         curl_close($this->ch);
     }
 
-    public function call($url, $params=array()) {
-        $params = json_encode($params);
+    public function call($url, $params=null) {
         $ch = $this->ch;
 
         curl_setopt($ch, CURLOPT_URL, $this->root . $url . '.json');
         curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
         curl_setopt($ch, CURLOPT_VERBOSE, $this->debug);
+
+        if($params)
+        {
+            $params = json_encode($params);
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+        }
 
         $start = microtime(true);
         $this->log('Call to ' . $this->root . $url . '.json: ' . $params);
@@ -93,7 +97,7 @@ class FacturationPro {
         if($result === null) throw new Error('We were unable to decode the JSON response from the FacturationPro API: ' . $response_body);
         
         if(floor($info['http_code'] / 100) >= 4) {
-            throw new Error($result);
+            throw new Error("[".$result['status']."] ".$result['error']);
         }
 
         return $result;
