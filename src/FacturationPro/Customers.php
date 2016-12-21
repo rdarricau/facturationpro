@@ -57,7 +57,7 @@ class FacturationPro_Customers {
 
     public function getAll()
     {
-    	return $this->master->getAll('firms/'.$this->master->firm.'/customers',$this->params);
+    	return $this->master->getAll('firms/'.$this->master->firm.'/customers');
     }
 
     public function get($idCustomer)
