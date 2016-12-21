@@ -31,7 +31,11 @@ class FacturationPro {
         $this->mail = $mail;
 
         $this->account = new FacturationPro_Account($this);
-        // With idFirm
+    }
+
+    public function setFirm($firm=null)
+    {
+        $this->firm = $firm;
         $this->assets = new FacturationPro_Assets($this);
         $this->categories = new FacturationPro_Categories($this);
         $this->customers = new FacturationPro_Customers($this);
@@ -41,12 +45,7 @@ class FacturationPro {
         $this->products = new FacturationPro_Products($this);
         $this->purchases = new FacturationPro_Purchases($this);
         $this->quotes = new FacturationPro_Quotes($this);
-        $this->suppliers = new FacturationPro_Suppliers($this);
-    }
-
-    public function setFirm($firm=null)
-    {
-        $this->firm = $firm;
+        $this->suppliers = new FacturationPro_Suppliers($this);        
     }
 
     public function get($url, $params=null) {
