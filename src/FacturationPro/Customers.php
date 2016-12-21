@@ -80,5 +80,10 @@ class FacturationPro_Customers {
     {
     	return $this->master->delete('firms/'.$this->master->firm.'/customers/'.$idCustomer);
     }
+
+    public function setCompanyName($company_name)
+    {
+    	$this->company_name = $company_name;
+    }
 }
 ?>
