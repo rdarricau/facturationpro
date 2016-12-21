@@ -55,7 +55,7 @@ class FacturationPro {
 
         $response = Unirest\Request::get($this->root . $url . '.json',array(),$params);
         if(floor($response->code / 100) >= 4) {
-            throw new Error("[".$result['status']."] ".$result['error']);
+            throw new Error($response->body->errors->error[0]);
         }
 
         return $response->body;
@@ -68,7 +68,7 @@ class FacturationPro {
 
         $response = Unirest\Request::get($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
-            throw new Error("[".$result['status']."] ".$result['error']);
+            throw new Error($response->body->errors->error[0]);
         }
 
         return $response->body;
@@ -78,10 +78,11 @@ class FacturationPro {
 
         Unirest\Request::auth($this->login,$this->pass);
         Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
+        $body = Unirest\Request\Body::json($body);
 
         $response = Unirest\Request::post($this->root . $url . '.json',array(),$body);
         if(floor($response->code / 100) >= 4) {
-            throw new Error("[".$result['status']."] ".$result['error']);
+            throw new Error($response->body->errors->error[0]);
         }
 
         return $response->body;
@@ -91,10 +92,11 @@ class FacturationPro {
 
         Unirest\Request::auth($this->login,$this->pass);
         Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
+        $body = Unirest\Request\Body::json($body);
 
         $response = Unirest\Request::patch($this->root . $url . '.json',array(),$body);
         if(floor($response->code / 100) >= 4) {
-            throw new Error("[".$result['status']."] ".$result['error']);
+            throw new Error($response->body->errors->error[0]);
         }
 
         return $response->body;
@@ -107,7 +109,7 @@ class FacturationPro {
 
         $response = Unirest\Request::delete($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
-            throw new Error("[".$result['status']."] ".$result['error']);
+            throw new Error($response->body->errors->error[0]);
         }
 
         return $response->body;
