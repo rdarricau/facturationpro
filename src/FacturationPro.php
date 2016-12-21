@@ -1,17 +1,17 @@
 <?php
 
-require_once "Facturationpro/Account.php";
-require_once "Facturationpro/Assets.php";
-require_once "Facturationpro/Categories.php";
-require_once "Facturationpro/Customers.php";
-require_once "Facturationpro/Followups.php";
-require_once "Facturationpro/Invoices.php";
-require_once "Facturationpro/Products.php";
-require_once "Facturationpro/Purchases.php";
-require_once "Facturationpro/Quotes.php";
-require_once "Facturationpro/Suppliers.php";
+require_once "FacturationPro/Account.php";
+require_once "FacturationPro/Assets.php";
+require_once "FacturationPro/Categories.php";
+require_once "FacturationPro/Customers.php";
+require_once "FacturationPro/Followups.php";
+require_once "FacturationPro/Invoices.php";
+require_once "FacturationPro/Products.php";
+require_once "FacturationPro/Purchases.php";
+require_once "FacturationPro/Quotes.php";
+require_once "FacturationPro/Suppliers.php";
 
-class Facturationpro {
+class FacturationPro {
     
     public $apikey;
     public $ch;
@@ -32,16 +32,16 @@ class Facturationpro {
 
         $this->root = rtrim($this->root, '/') . '/';
 
-        $this->account = new Facturationpro_Account($this);
-        $this->assets = new Facturationpro_Assets($this);
-        $this->categories = new Facturationpro_Categories($this);
-        $this->customers = new Facturationpro_Customers($this);
-        $this->followups = new Facturationpro_Followups($this);
-        $this->invoices = new Facturationpro_Invoices($this);
-        $this->products = new Facturationpro_Products($this);
-        $this->purchases = new Facturationpro_Purchases($this);
-        $this->quotes = new Facturationpro_Quotes($this);
-        $this->suppliers = new Facturationpro_Suppliers($this);
+        $this->account = new FacturationPro_Account($this);
+        $this->assets = new FacturationPro_Assets($this);
+        $this->categories = new FacturationPro_Categories($this);
+        $this->customers = new FacturationPro_Customers($this);
+        $this->followups = new FacturationPro_Followups($this);
+        $this->invoices = new FacturationPro_Invoices($this);
+        $this->products = new FacturationPro_Products($this);
+        $this->purchases = new FacturationPro_Purchases($this);
+        $this->quotes = new FacturationPro_Quotes($this);
+        $this->suppliers = new FacturationPro_Suppliers($this);
     }
 
     public function __destruct() {
@@ -80,7 +80,7 @@ class Facturationpro {
             throw new Error("API call to $url failed: " . curl_error($ch));
         }
         $result = json_decode($response_body, true);
-        if($result === null) throw new Error('We were unable to decode the JSON response from the Facturationpro API: ' . $response_body);
+        if($result === null) throw new Error('We were unable to decode the JSON response from the FacturationPro API: ' . $response_body);
         
         if(floor($info['http_code'] / 100) >= 4) {
             throw $this->castError($result);
