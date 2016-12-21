@@ -59,8 +59,7 @@ class FacturationPro {
         curl_close($this->ch);
     }
 
-    public function call($url, $params) {
-        if(!$params) $params = "";
+    public function call($url, $params=array()) {
         $params = json_encode($params);
         $ch = $this->ch;
 
