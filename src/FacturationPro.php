@@ -60,7 +60,7 @@ class FacturationPro {
     }
 
     public function call($url, $params) {
-        if(!$params) $params = "":
+        if(!$params) $params = "";
         $params = json_encode($params);
         $ch = $this->ch;
 
