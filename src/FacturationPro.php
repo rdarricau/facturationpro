@@ -93,7 +93,7 @@ class FacturationPro {
         Unirest\Request::auth($this->login,$this->pass);
         Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
 
-        $response = Unirest\Request::patch($this->root . $url . '.json';
+        $response = Unirest\Request::delete($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
             throw new Error("[".$result['status']."] ".$result['error']);
         }
