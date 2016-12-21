@@ -51,7 +51,7 @@ class FacturationPro {
     public function getAll($url, $params=null) {
 
         Unirest\Request::auth($this->login,$this->pass);
-        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+        Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::get($this->root . $url . '.json',array(),$params);
         if(floor($response->code / 100) >= 4) {
@@ -64,7 +64,7 @@ class FacturationPro {
     public function get($url) {
 
         Unirest\Request::auth($this->login,$this->pass);
-        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+        Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::get($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
@@ -77,7 +77,7 @@ class FacturationPro {
     public function post($url, $body=null) {
 
         Unirest\Request::auth($this->login,$this->pass);
-        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+        Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::post($this->root . $url . '.json',array(),$body);
         if(floor($response->code / 100) >= 4) {
@@ -90,7 +90,7 @@ class FacturationPro {
     public function patch($url, $body=null) {
 
         Unirest\Request::auth($this->login,$this->pass);
-        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+        Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::patch($this->root . $url . '.json',array(),$body);
         if(floor($response->code / 100) >= 4) {
@@ -103,7 +103,7 @@ class FacturationPro {
     public function delete($url) {
 
         Unirest\Request::auth($this->login,$this->pass);
-        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+        Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::delete($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {

@@ -1,6 +1,7 @@
 <?php
 class FacturationPro_Customers {
 
+	protected $id;
 	protected $company_name;
 	protected $civility;
 	protected $first_name;
@@ -65,14 +66,14 @@ class FacturationPro_Customers {
     	return $this->master->get('firms/'.$this->master->firm.'/customers/'.$idCustomer);
     }
 
-    public function post($customer)
+    public function post()
     {
-    	return $this->master->post('firms/'.$this->master->firm.'/customers',$customer);
+    	return $this->master->post('firms/'.$this->master->firm.'/customers',$this);
     }
 
-    public function patch($idCustomer,$customer)
+    public function patch()
     {
-    	return $this->master->patch('firms/'.$this->master->firm.'/customers/'.$idCustomer,$customer);
+    	return $this->master->patch('firms/'.$this->master->firm.'/customers/'.$this->id,$this);
     }
 
     public function delete($idCustomer)
