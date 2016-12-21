@@ -66,24 +66,19 @@ class FacturationPro_Customers {
     	return $this->master->get('firms/'.$this->master->firm.'/customers/'.$idCustomer);
     }
 
-    public function post()
+    public function post($customer)
     {
-    	return $this->master->post('firms/'.$this->master->firm.'/customers',$this);
+    	return $this->master->post('firms/'.$this->master->firm.'/customers',$customer);
     }
 
-    public function patch()
+    public function patch($idCustomer,$customer)
     {
-    	return $this->master->patch('firms/'.$this->master->firm.'/customers/'.$this->id,$this);
+    	return $this->master->patch('firms/'.$this->master->firm.'/customers/'.$idCustomer,$customer);
     }
 
     public function delete($idCustomer)
     {
     	return $this->master->delete('firms/'.$this->master->firm.'/customers/'.$idCustomer);
-    }
-
-    public function setCompanyName($company_name)
-    {
-    	$this->company_name = $company_name;
     }
 }
 ?>
