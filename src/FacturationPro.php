@@ -93,7 +93,7 @@ class FacturationPro {
         if($result === null) throw new Error('We were unable to decode the JSON response from the FacturationPro API: ' . $response_body);
         
         if(floor($info['http_code'] / 100) >= 4) {
-            throw $this->castError($result);
+            throw new Error($result);
         }
 
         return $result;
