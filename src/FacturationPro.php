@@ -13,14 +13,23 @@ require_once "FacturationPro/Suppliers.php";
 
 class FacturationPro {
     
-    public $apikey;
+    public $login;
+    public $pass;
+    public $service;
+    public $mail;
     public $ch;
-    public $root = 'https://www.facturation.pro/firms/';
+    public $root = 'https://www.facturation.pro/';
     public $debug = false;
 
-    public function __construct($apikey=null) {
-        if(!$apikey) throw new Error('You must provide an API key');
-        $this->apikey = $apikey;
+    public function __construct($login=null,$pass=null,$service=null,$mail=null) {
+        if(!$login) throw new Error('You must provide a login');
+        if(!$pass) throw new Error('You must provide a pass');
+        if(!$service) throw new Error('You must provide a service name');
+        if(!$mail) throw new Error('You must provide a mail');
+        $this->login = $login;
+        $this->pass = $pass;
+        $this->service = $service;
+        $this->mail = $mail;
 
         $this->ch = curl_init();
         curl_setopt($this->ch, CURLOPT_POST, true);
@@ -29,6 +38,8 @@ class FacturationPro {
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_CONNECTTIMEOUT, 30);
         curl_setopt($this->ch, CURLOPT_TIMEOUT, 600);
+        curl_setopt($this->ch, CURLOPT_USERAGENT, $this->service." (".$this->mail.")");
+        curl_setopt($this->ch, CURLOPT_USERPWD, $this->login.":".$this->pass);
 
         $this->root = rtrim($this->root, '/') . '/';
 
@@ -49,7 +60,7 @@ class FacturationPro {
     }
 
     public function call($url, $params) {
-        $params['key'] = $this->apikey;
+        if(!$params) $params = "":
         $params = json_encode($params);
         $ch = $this->ch;
 
