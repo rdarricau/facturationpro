@@ -17,13 +17,14 @@ class FacturationPro {
     public $pass;
     public $service;
     public $mail;
+    public $firm;
     public $root = 'https://www.facturation.pro/';
 
     public function __construct($login=null,$pass=null,$service=null,$mail=null) {
         if(!$login) throw new Error('You must provide a login');
         if(!$pass) throw new Error('You must provide a pass');
         if(!$service) throw new Error('You must provide a service name');
-        if(!$mail) throw new Error('You must provide a mail');
+
         $this->login = $login;
         $this->pass = $pass;
         $this->service = $service;
@@ -43,16 +44,60 @@ class FacturationPro {
         $this->suppliers = new FacturationPro_Suppliers($this);
     }
 
-    public function call($url, $params=null) {
+    public function setFirm($firm=null)
+    {
+        $this->firm = $firm;
+    }
+
+    public function get($url, $params=null) {
 
         Unirest\Request::auth($this->login,$this->pass);
         Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
 
-        $response = Unirest\Request::get($this->root . $url . '.json');
+        $response = Unirest\Request::get($this->root . $url . '.json',array(),$params);
         if(floor($response->code / 100) >= 4) {
             throw new Error("[".$result['status']."] ".$result['error']);
         }
 
         return $response->body;
     }
+
+    public function post($url, $body=null) {
+
+        Unirest\Request::auth($this->login,$this->pass);
+        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+
+        $response = Unirest\Request::post($this->root . $url . '.json',array(),$body);
+        if(floor($response->code / 100) >= 4) {
+            throw new Error("[".$result['status']."] ".$result['error']);
+        }
+
+        return $response->body;
+    }
+
+    public function patch($url, $body=null) {
+
+        Unirest\Request::auth($this->login,$this->pass);
+        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+
+        $response = Unirest\Request::patch($this->root . $url . '.json',array(),$body);
+        if(floor($response->code / 100) >= 4) {
+            throw new Error("[".$result['status']."] ".$result['error']);
+        }
+
+        return $response->body;
+    }    
+
+    public function delete($url) {
+
+        Unirest\Request::auth($this->login,$this->pass);
+        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+
+        $response = Unirest\Request::patch($this->root . $url . '.json';
+        if(floor($response->code / 100) >= 4) {
+            throw new Error("[".$result['status']."] ".$result['error']);
+        }
+
+        return $response->body;
+    }        
 }

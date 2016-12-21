@@ -6,7 +6,7 @@ class FacturationPro_Account {
 
     public function get()
     {
-    	return $this->master->call('account');
+    	return $this->master->get('account');
     }
 }
 ?>
