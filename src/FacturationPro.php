@@ -48,12 +48,25 @@ class FacturationPro {
         $this->suppliers = new FacturationPro_Suppliers($this);        
     }
 
-    public function get($url, $params=null) {
+    public function getAll($url, $params=null) {
 
         Unirest\Request::auth($this->login,$this->pass);
         Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
 
         $response = Unirest\Request::get($this->root . $url . '.json',array(),$params);
+        if(floor($response->code / 100) >= 4) {
+            throw new Error("[".$result['status']."] ".$result['error']);
+        }
+
+        return $response->body;
+    }
+
+    public function get($url) {
+
+        Unirest\Request::auth($this->login,$this->pass);
+        Unirest\Request::defaultHeader('UserAgent', $this->service." (".$this->mail.")");
+
+        $response = Unirest\Request::get($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
             throw new Error("[".$result['status']."] ".$result['error']);
         }

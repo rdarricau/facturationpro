@@ -6,7 +6,7 @@ class FacturationPro_Orders {
     		throw new Error('You must provide a firm id');
     }
 
-    public function get()
+    public function getAll()
     {
     	return $this->master->get('firms/'.$this->master->firm.'/orders');
     }
