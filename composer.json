@@ -10,6 +10,7 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.5.9",
+    "doctrine/orm": "^2.5",
     "mashape/unirest-php": "3.*"
   },
     "autoload": {
