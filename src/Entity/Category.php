@@ -1,19 +1,19 @@
 <?php
 
-class Followup {
-    /** @var integer */
+class Category {
+ 	/** @var integer **/
  	protected $id;
 
-    /** @var string */
+    /** @var string **/
  	protected $title;
 
-    /** @var FollowupStatus */
- 	protected $status;
+     /** @var CategoryStatus **/
+     protected $status;
 
-    /** @var \DateTime */
+    /** @var \DateTime **/
  	protected $created_at;
 
-    /** @var \DateTime */
+    /** @var \DateTime **/
  	protected $updated_at;
 
     /**
@@ -33,7 +33,7 @@ class Followup {
     }
 
     /**
-     * @return FollowupStatus
+     * @return CategoryStatus
      */
     public function getStatus()
     {
@@ -41,7 +41,7 @@ class Followup {
     }
 
     /**
-     * @return DateTime
+     * @return datetime
      */
     public function getCreatedAt()
     {
@@ -49,11 +49,13 @@ class Followup {
     }
 
     /**
-     * @return DateTime
+     * @return datetime
      */
     public function getUpdatedAt()
     {
         return $this->updated_at;
     }
+
+
 }
 ?>
