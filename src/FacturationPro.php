@@ -1,8 +1,9 @@
 <?php
 
 require_once "Parser.php";
+require_once "Map.php";
+
 require_once "FacturationPro/Account.php";
-require_once "Entity/Account.php";
 
 class FacturationPro {
     
