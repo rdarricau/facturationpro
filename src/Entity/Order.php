@@ -9,7 +9,7 @@
 class Order
 {
     /** @var  string */
-    protected $title;*
+    protected $title;
 
     /** @var  float */
     protected $amount;

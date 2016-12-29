@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1851f0a9-c8c3-4296-ad66-17ad50c69ff5" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Account.php" afterPath="$PROJECT_DIR$/src/Query/Account.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Assets.php" afterPath="$PROJECT_DIR$/src/Query/Assets.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Categories.php" afterPath="$PROJECT_DIR$/src/Query/Categories.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Customers.php" afterPath="$PROJECT_DIR$/src/Query/Customers.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Followups.php" afterPath="$PROJECT_DIR$/src/Query/Followups.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Invoices.php" afterPath="$PROJECT_DIR$/src/Query/Invoices.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Orders.php" afterPath="$PROJECT_DIR$/src/Query/Orders.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Products.php" afterPath="$PROJECT_DIR$/src/Query/Products.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Purchases.php" afterPath="$PROJECT_DIR$/src/Query/Purchases.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Quotes.php" afterPath="$PROJECT_DIR$/src/Query/Quotes.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/FacturationPro/Suppliers.php" afterPath="$PROJECT_DIR$/src/Query/Suppliers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Country.php" afterPath="$PROJECT_DIR$/src/Entity/Country.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FacturationPro.php" afterPath="$PROJECT_DIR$/src/FacturationPro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.php" afterPath="$PROJECT_DIR$/src/Map.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Order.php" afterPath="$PROJECT_DIR$/src/Entity/Order.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,7 +27,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FacturationPro.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FacturationPro.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FacturationPro.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
@@ -50,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Followups.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Followups.php">
+      <file leaf-file-name="Order.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="198">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -169,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/Entity/Purchase.php" />
         <option value="$PROJECT_DIR$/src/Entity/Quote.php" />
         <option value="$PROJECT_DIR$/src/Entity/Supplier.php" />
-        <option value="$PROJECT_DIR$/src/Entity/Order.php" />
         <option value="$PROJECT_DIR$/src/Parser.php" />
         <option value="$PROJECT_DIR$/src/Entity/Country.php" />
         <option value="$PROJECT_DIR$/src/Map.php" />
@@ -185,6 +171,7 @@
         <option value="$PROJECT_DIR$/src/Query/Quotes.php" />
         <option value="$PROJECT_DIR$/src/Query/Suppliers.php" />
         <option value="$PROJECT_DIR$/src/FacturationPro.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Order.php" />
       </list>
     </option>
   </component>
@@ -259,7 +246,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Query" />
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,12 +332,12 @@
       <option name="presentableId" value="Default" />
       <updated>1482942297639</updated>
       <workItem from="1482942304795" duration="9227000" />
-      <workItem from="1482998113356" duration="5146000" />
+      <workItem from="1482998113356" duration="5340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14373000" />
+    <option name="totallyTimeSpent" value="14567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -633,14 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -781,6 +760,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
           <folding />
         </state>
       </provider>
