@@ -1,5 +1,7 @@
 <?php
 
+namespace FacturationPro\Entity;
+
 class Account {
     /** @var int **/
  	protected $id;

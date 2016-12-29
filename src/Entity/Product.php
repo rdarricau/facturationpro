@@ -1,4 +1,6 @@
 <?php
+namespace FacturationPro\Entity;
+
 
 class Product {
     /** @var integer */

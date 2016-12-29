@@ -1,4 +1,5 @@
 <?php
+namespace FacturationPro\Entity;
 
 class CategoryStatus{
     /** @var int */

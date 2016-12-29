@@ -1,4 +1,5 @@
 <?php
+namespace FacturationPro\Entity;
 
 /**
  * Created by PhpStorm.

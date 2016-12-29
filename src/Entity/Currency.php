@@ -1,4 +1,6 @@
 <?php
+namespace FacturationPro\Entity;
+
 /**
  * Created by PhpStorm.
  * User: remi
