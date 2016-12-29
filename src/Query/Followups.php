@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Followups {
+namespace Query;
+
+class Followups {
     public function __construct(FacturationPro $master) {
         $this->master = $master;
     	if(!isset($this->master->firm))

@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Customers {
+namespace Query;
+
+class Customers {
 
 	protected $id;
 	protected $company_name;

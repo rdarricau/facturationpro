@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Categories {
+namespace Query;
+
+class Assets {
     public function __construct(FacturationPro $master) {
         $this->master = $master;
     	if(!isset($this->master->firm))

@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Account {
+namespace Query;
+
+class Account {
     public function __construct(FacturationPro $master) {
         $this->master = $master;
     }

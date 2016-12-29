@@ -3,8 +3,6 @@
 require_once "Parser.php";
 require_once "Map.php";
 
-require_once "FacturationPro/Account.php";
-
 class FacturationPro {
     
     public $login;
@@ -14,20 +12,23 @@ class FacturationPro {
     public $firm;
     public $root = 'https://www.facturation.pro/';
     public $parser;
+    public $map;
 
     public function __construct($login=null,$pass=null,$service=null,$mail=null) {
         if(!$login) throw new Error('You must provide a login');
         if(!$pass) throw new Error('You must provide a pass');
         if(!$service) throw new Error('You must provide a service name');
 
+        $this->map = new Map();
+        $this->parser = new Parser();
+
         $this->login = $login;
         $this->pass = $pass;
         $this->service = $service;
         $this->mail = $mail;
 
-        $this->account = new FacturationPro_Account($this);
+        $this->account = new \Query\Account($this);
 
-        $this->parser = new Parser();
     }
 
     public function setFirm($firm=null)

@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Invoices {
+namespace Query;
+
+class Invoices {
     public function __construct(FacturationPro $master) {
         $this->master = $master;
     	if(!isset($this->master->firm))

@@ -14,7 +14,7 @@ class Country
     /** @var  string */
     protected $title;
 
-$countries = array
+protected $countries = array
 (
 'AF' => 'Afghanistan',
 'AX' => 'Aland Islands',

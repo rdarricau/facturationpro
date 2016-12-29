@@ -1,5 +1,7 @@
 <?php
-class FacturationPro_Suppliers {
+namespace Query;
+
+class Suppliers {
     public function __construct(FacturationPro $master) {
         $this->master = $master;
     	if(!isset($this->master->firm))
