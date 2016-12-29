@@ -63,7 +63,7 @@ class FacturationPro {
             throw new Error($response->body->errors->error[0]);
         }
 
-        return objectToObject($response->body,"Account");
+        return self::objectToObject($response->body,"Account");
     }
 
     function objectToObject($instance, $className) {
