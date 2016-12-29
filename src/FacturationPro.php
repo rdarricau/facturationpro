@@ -14,10 +14,11 @@ class FacturationPro {
     public $parser;
     public $map;
 
-    public function __construct($login=null,$pass=null,$service=null,$mail=null) {
-        if(!$login) throw new Error('You must provide a login');
-        if(!$pass) throw new Error('You must provide a pass');
-        if(!$service) throw new Error('You must provide a service name');
+    public function __construct($login=null,$pass=null,$service=null,$mail=null)
+    {
+        if (!$login) throw new Error('You must provide a login');
+        if (!$pass) throw new Error('You must provide a pass');
+        if (!$service) throw new Error('You must provide a service name');
 
         $this->map = new Map();
         $this->parser = new Parser();
@@ -26,21 +27,6 @@ class FacturationPro {
         $this->pass = $pass;
         $this->service = $service;
         $this->mail = $mail;
-    }
-
-    public function setFirm($firm=null)
-    {
-        $this->firm = $firm;
-        $this->assets = new FacturationPro_Assets($this);
-        $this->categories = new FacturationPro_Categories($this);
-        $this->customers = new FacturationPro_Customers($this);
-        $this->followups = new FacturationPro_Followups($this);
-        $this->invoices = new FacturationPro_Invoices($this);
-        $this->orders = new FacturationPro_Orders($this);
-        $this->products = new FacturationPro_Products($this);
-        $this->purchases = new FacturationPro_Purchases($this);
-        $this->quotes = new FacturationPro_Quotes($this);
-        $this->suppliers = new FacturationPro_Suppliers($this);        
     }
 
     public function getAll($url, $params=null) {
@@ -65,7 +51,7 @@ class FacturationPro {
         if(floor($response->code / 100) >= 4) {
             throw new Error($response->body->errors->error[0]);
         }
-        return $this->parser->objectToObject($response->body,"Account");
+        return $this->parser->do($response->body,"Account");
     }
 
     public function post($url, $body=null) {

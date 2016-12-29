@@ -8,7 +8,7 @@
  */
 class Parser
 {
-    public function objectToObject($sourceObject, $destination) {
+    public function do($sourceObject, $destination) {
         if (is_string($destination)) {
             $destination = new $destination();
         }
@@ -19,6 +19,10 @@ class Parser
             $sourceProperty->setAccessible(true);
             $name = $sourceProperty->getName();
             $value = $sourceProperty->getValue($sourceObject);
+            if(is_array($value)){
+                foreach($value as &$item)
+                    $item = self::do($item,"Firm");
+            }
             if ($destinationReflection->hasProperty($name)) {
                 $propDest = $destinationReflection->getProperty($name);
                 $propDest->setAccessible(true);
