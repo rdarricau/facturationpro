@@ -39,7 +39,7 @@ class FacturationPro {
             throw new Error($response->body->errors->error[0]);
         }
 
-        return $response->body;
+        return $this->parser->do($response->body,"Customer");
     }
 
     public function get($url) {
