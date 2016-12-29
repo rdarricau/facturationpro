@@ -12,7 +12,7 @@ class FacturationPro {
     public $mail;
     public $firm;
     public $root = 'https://www.facturation.pro/';
-    public $parser = new Parser();
+    public $parser;
 
     public function __construct($login=null,$pass=null,$service=null,$mail=null) {
         if(!$login) throw new Error('You must provide a login');
@@ -25,6 +25,8 @@ class FacturationPro {
         $this->mail = $mail;
 
         $this->account = new FacturationPro_Account($this);
+
+        $this->parser = new Parser();
     }
 
     public function setFirm($firm=null)
@@ -64,7 +66,7 @@ class FacturationPro {
         if(floor($response->code / 100) >= 4) {
             throw new Error($response->body->errors->error[0]);
         }
-        return $parser->objectToObject($response->body,"Account");
+        return $this->parser->objectToObject($response->body,"Account");
     }
 
     public function post($url, $body=null) {
