@@ -1,15 +1,7 @@
 <?php
 
 require_once "FacturationPro/Account.php";
-require_once "FacturationPro/Assets.php";
-require_once "FacturationPro/Categories.php";
-require_once "FacturationPro/Customers.php";
-require_once "FacturationPro/Followups.php";
-require_once "FacturationPro/Invoices.php";
-require_once "FacturationPro/Products.php";
-require_once "FacturationPro/Purchases.php";
-require_once "FacturationPro/Quotes.php";
-require_once "FacturationPro/Suppliers.php";
+require_once "Entity/Account.php";
 
 class FacturationPro {
     
@@ -71,7 +63,16 @@ class FacturationPro {
             throw new Error($response->body->errors->error[0]);
         }
 
-        return $response->body;
+        return objectToObject($response->body,"Account");
+    }
+
+    function objectToObject($instance, $className) {
+        return unserialize(sprintf(
+            'O:%d:"%s"%s',
+            strlen($className),
+            $className,
+            strstr(strstr(serialize($instance), '"'), ':')
+        ));
     }
 
     public function post($url, $body=null) {
