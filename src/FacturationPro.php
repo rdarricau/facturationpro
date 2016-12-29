@@ -1,5 +1,6 @@
 <?php
 
+require_once "Parser.php";
 require_once "FacturationPro/Account.php";
 require_once "Entity/Account.php";
 
@@ -11,6 +12,7 @@ class FacturationPro {
     public $mail;
     public $firm;
     public $root = 'https://www.facturation.pro/';
+    public $parser = new Parser();
 
     public function __construct($login=null,$pass=null,$service=null,$mail=null) {
         if(!$login) throw new Error('You must provide a login');
@@ -62,17 +64,7 @@ class FacturationPro {
         if(floor($response->code / 100) >= 4) {
             throw new Error($response->body->errors->error[0]);
         }
-
-        return self::objectToObject($response->body,"Account");
-    }
-
-    function objectToObject($instance, $className) {
-        return unserialize(sprintf(
-            'O:%d:"%s"%s',
-            strlen($className),
-            $className,
-            strstr(strstr(serialize($instance), '"'), ':')
-        ));
+        return $parser->objectToObject($response->body,"Account");
     }
 
     public function post($url, $body=null) {
