@@ -26,9 +26,6 @@ class FacturationPro {
         $this->pass = $pass;
         $this->service = $service;
         $this->mail = $mail;
-
-        $this->account = new \FacturationPro\Query\Account($this);
-
     }
 
     public function setFirm($firm=null)

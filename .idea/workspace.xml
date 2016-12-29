@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1851f0a9-c8c3-4296-ad66-17ad50c69ff5" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Account.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Assets.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Categories.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Customers.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Followups.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Invoices.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Orders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Products.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Purchases.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Quotes.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Query/Suppliers.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FacturationPro.php" afterPath="$PROJECT_DIR$/src/FacturationPro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Account.php" afterPath="$PROJECT_DIR$/src/Query/Account.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Assets.php" afterPath="$PROJECT_DIR$/src/Query/Assets.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Categories.php" afterPath="$PROJECT_DIR$/src/Query/Categories.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Customers.php" afterPath="$PROJECT_DIR$/src/Query/Customers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Followups.php" afterPath="$PROJECT_DIR$/src/Query/Followups.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Invoices.php" afterPath="$PROJECT_DIR$/src/Query/Invoices.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Orders.php" afterPath="$PROJECT_DIR$/src/Query/Orders.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Products.php" afterPath="$PROJECT_DIR$/src/Query/Products.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Purchases.php" afterPath="$PROJECT_DIR$/src/Query/Purchases.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Quotes.php" afterPath="$PROJECT_DIR$/src/Query/Quotes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Query/Suppliers.php" afterPath="$PROJECT_DIR$/src/Query/Suppliers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.php" afterPath="$PROJECT_DIR$/src/Map.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,71 +30,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Customers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Customers.php">
+      <file leaf-file-name="Map.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Map.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            <state relative-caret-position="720">
+              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Invoices.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Invoices.php">
+      <file leaf-file-name="Parser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Parser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Orders.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Orders.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Products.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Products.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Purchases.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Purchases.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Quotes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Quotes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Suppliers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Suppliers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="180">
+              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -101,28 +53,8 @@
       <file leaf-file-name="FacturationPro.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/FacturationPro.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Followups.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Followups.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Categories.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Query/Categories.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="180">
+              <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -168,20 +100,20 @@
         <option value="$PROJECT_DIR$/src/Entity/Supplier.php" />
         <option value="$PROJECT_DIR$/src/Parser.php" />
         <option value="$PROJECT_DIR$/src/Entity/Country.php" />
-        <option value="$PROJECT_DIR$/src/Map.php" />
         <option value="$PROJECT_DIR$/src/Entity/Order.php" />
         <option value="$PROJECT_DIR$/src/Entity/PayBefore.php" />
+        <option value="$PROJECT_DIR$/src/Query/Invoices.php" />
         <option value="$PROJECT_DIR$/src/Query/Account.php" />
         <option value="$PROJECT_DIR$/src/Query/Assets.php" />
         <option value="$PROJECT_DIR$/src/Query/Categories.php" />
-        <option value="$PROJECT_DIR$/src/Query/Followups.php" />
         <option value="$PROJECT_DIR$/src/Query/Customers.php" />
-        <option value="$PROJECT_DIR$/src/Query/Invoices.php" />
+        <option value="$PROJECT_DIR$/src/Query/Followups.php" />
         <option value="$PROJECT_DIR$/src/Query/Orders.php" />
         <option value="$PROJECT_DIR$/src/Query/Products.php" />
         <option value="$PROJECT_DIR$/src/Query/Purchases.php" />
-        <option value="$PROJECT_DIR$/src/Query/Quotes.php" />
         <option value="$PROJECT_DIR$/src/Query/Suppliers.php" />
+        <option value="$PROJECT_DIR$/src/Query/Quotes.php" />
+        <option value="$PROJECT_DIR$/src/Map.php" />
         <option value="$PROJECT_DIR$/src/FacturationPro.php" />
       </list>
     </option>
@@ -240,24 +172,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facturationpro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facturationpro" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Query" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,12 +257,12 @@
       <option name="presentableId" value="Default" />
       <updated>1482942297639</updated>
       <workItem from="1482942304795" duration="9227000" />
-      <workItem from="1482998113356" duration="6456000" />
+      <workItem from="1482998113356" duration="6890000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15683000" />
+    <option name="totallyTimeSpent" value="16117000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -597,14 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Civility.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -633,14 +539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="22" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -687,42 +585,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Query/Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="10" lean-forward="false" selection-start-line="1" selection-start-column="10" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Assets.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Categories.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Followups.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Query/Customers.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="3" column="17" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -730,55 +612,87 @@
     <entry file="file://$PROJECT_DIR$/src/Query/Invoices.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Orders.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Products.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Purchases.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Query/Quotes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Query/Suppliers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Query/Quotes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Query/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Query/Customers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" lean-forward="false" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FacturationPro.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+        <state relative-caret-position="180">
+          <caret line="58" column="23" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="23" />
           <folding />
         </state>
       </provider>

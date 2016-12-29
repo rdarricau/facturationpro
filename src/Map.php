@@ -10,7 +10,6 @@ class Map
     public function __construct()
     {
         self::entities();
-        self::queries();
     }
 
     public function entities()
@@ -39,20 +38,5 @@ class Map
         require_once "Entity/QuoteStatus.php";
         require_once "Entity/Supplier.php";
         require_once "Entity/VatExemptionReason.php";
-    }
-
-    public function queries()
-    {
-        require_once "Query/Account.php";
-        require_once "Query/Assets.php";
-        require_once "Query/Categories.php";
-        require_once "Query/Customers.php";
-        require_once "Query/Followups.php";
-        require_once "Query/Invoices.php";
-        require_once "Query/Orders.php";
-        require_once "Query/Products.php";
-        require_once "Query/Purchases.php";
-        require_once "Query/Quotes.php";
-        require_once "Query/Suppliers.php";
     }
 }
