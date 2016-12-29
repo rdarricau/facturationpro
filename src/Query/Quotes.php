@@ -1,5 +1,5 @@
 <?php
-namespace Query;
+namespace FacturationPro\Query;
 
 class Quotes {
     public function __construct(FacturationPro $master) {

@@ -1,5 +1,5 @@
 <?php
-namespace Query;
+namespace FacturationPro\Query;
 
 class Followups {
     public function __construct(FacturationPro $master) {

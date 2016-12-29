@@ -27,7 +27,7 @@ class FacturationPro {
         $this->service = $service;
         $this->mail = $mail;
 
-        $this->account = new \Query\Account($this);
+        $this->account = new \FacturationPro\Query\Account($this);
 
     }
 
