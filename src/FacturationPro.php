@@ -1,24 +1,6 @@
 <?php
 namespace FacturationPro;
 
-use FacturationPro\Entity\Account;
-use FacturationPro\Entity\Asset;
-use FacturationPro\Entity\Category;
-use FacturationPro\Entity\CategoryStatus;
-use FacturationPro\Entity\Civility;
-use FacturationPro\Entity\Country;
-use FacturationPro\Entity\Currency;
-use FacturationPro\Entity\Customer;
-use FacturationPro\Entity\Firm;
-use FacturationPro\Entity\Followup;
-use FacturationPro\Entity\FollowupStatus;
-use FacturationPro\Entity\Invoice;
-use FacturationPro\Entity\Item;
-use FacturationPro\Entity\Language;
-use FacturationPro\Entity\Nature;
-use FacturationPro\Entity\Order;
-use FacturationPro\Entity\PayBefore;
-
 class FacturationPro {
     
     public $login;
@@ -28,6 +10,9 @@ class FacturationPro {
     public $currentIdFirm;
     public $root = 'https://www.facturation.pro/';
     public $parser;
+
+    const SORT_DESC = "desc";
+    const SORT_ASC = "asc";
 
     public function __construct($login=null,$pass=null,$service=null,$mail=null)
     {
@@ -41,6 +26,18 @@ class FacturationPro {
         $this->pass = $pass;
         $this->service = $service;
         $this->mail = $mail;
+
+        $this->account = new \FacturationPro\Route\Account($this);
+        $this->assets = new \FacturationPro\Route\Asset($this);
+        $this->categories = new \FacturationPro\Route\Category($this);
+        $this->customers = new \FacturationPro\Route\Customer($this);
+        $this->followups = new \FacturationPro\Route\Followup($this);
+        $this->invoices = new \FacturationPro\Route\Invoice($this);
+        $this->orders = new \FacturationPro\Route\Order($this);
+        $this->products = new \FacturationPro\Route\Product($this);
+        $this->purchases = new \FacturationPro\Route\Purchase($this);
+        $this->quotes = new \FacturationPro\Route\Quote($this);
+        $this->suppliers = new \FacturationPro\Route\Supplier($this);
     }
 
     public function setFirm($idFirm)
@@ -48,29 +45,43 @@ class FacturationPro {
         $this->currentIdFirm = $idFirm;
     }
 
-    public function getAll($url, $params=null) {
+    public function getAll($url, $firm, $entityClass, $params=null) {
 
         \Unirest\Request::auth($this->login,$this->pass);
         \Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
+        if($firm)
+        {
+            if($this->currentIdFirm)
+                $url = '/firms/'.$this->currentIdFirm.'/'.$url;
+            else
+                throw new \Error("You need to set a firm.");
+        }
         $response = \Unirest\Request::get($this->root . $url . '.json',array(),$params);
         if(floor($response->code / 100) >= 4) {
             throw new \Error($response->body->errors->error[0]);
         }
 
-        return $this->parser->do($response->body,"\\FacturationPro\\Entity\\"."Customer");
+        return $this->parser->do($response->body,$entityClass);
     }
 
-    public function get($url) {
+    public function get($url,$id,$firm,$entityClass) {
 
         \Unirest\Request::auth($this->login,$this->pass);
         \Unirest\Request::defaultHeader('User-Agent', $this->service." (".$this->mail.")");
 
+        if($firm)
+        {
+            if($this->currentIdFirm)
+                $url = '/firms/'.$this->currentIdFirm.'/'.$url.'/'.$id;
+            else
+                throw new \Error("You need to set a firm.");
+        }
         $response = \Unirest\Request::get($this->root . $url . '.json');
         if(floor($response->code / 100) >= 4) {
             throw new \Error($response->body->errors->error[0]);
         }
-        return $this->parser->do($response->body,"Invoice");
+        return $this->parser->do($response->body,$entityClass);
     }
 
     public function post($url, $body=null) {

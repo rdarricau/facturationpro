@@ -9,9 +9,26 @@ namespace FacturationPro\Route;
  */
 class Account
 {
+    /** @var \FacturationPro\FacturationPro  */
+    protected $master;
+
     /** @var string */
     protected $url = "account";
 
     /** @var bool */
     protected $firm = false;
+
+    /** @var string */
+    protected $entity;
+
+    public function __construct(\FacturationPro\FacturationPro $master)
+    {
+        $this->master = $master;
+        $this->entity = \FacturationPro\Entity\Account::class;
+    }
+
+    public function get()
+    {
+        return $this->master->getAll($this->url,$this->firm, $this->entity);
+    }
 }

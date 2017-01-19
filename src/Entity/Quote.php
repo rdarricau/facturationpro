@@ -5,6 +5,9 @@ class Quote {
     /** @var integer */
  	protected $id;
 
+    /** @var  string */
+    protected $title;
+
     /** @var  Customer */
  	protected $customer;
 
@@ -37,6 +40,9 @@ class Quote {
 
     /** @var  float */
  	protected $rebate_percentage;
+
+    /** @var  string */
+    protected $vat_exemption;
 
     /** @var  VatExemptionReason */
  	protected $vat_exemption_reason;
