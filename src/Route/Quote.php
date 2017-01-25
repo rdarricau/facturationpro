@@ -27,6 +27,7 @@ class Quote
     /** @var string **/
     protected $api_id;
 
+
     /** @var string **/
     protected $api_custom;
 

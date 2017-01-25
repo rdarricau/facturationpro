@@ -34,7 +34,7 @@ use FacturationPro\Entity\VatExemptionReason;
  */
 class Parser
 {
-    public function do($response,$destination)
+    public function parse($response,$destination)
     {
         if(is_array($response))
         {
