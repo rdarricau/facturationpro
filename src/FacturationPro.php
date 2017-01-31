@@ -63,11 +63,10 @@ class FacturationPro {
         return $this->parser->parse($response->body,$entityClass);
     }
 
-    public function post($firm, $url, $object, $entityClass)
+    public function post($firm, $url, $object, $entityClass, $routeClass)
     {
-        $body = \Unirest\Request\Body::json($this->serializer($object));
-
-        $response = \Unirest\Request::post($this->apiUrl . self::url($firm,$url) . '.json',array(),$body);
+        $body = \Unirest\Request\Body::json($this->serializer->serialize($object,$routeClass));
+        $response = \Unirest\Request::post($this->apiUrl . self::url($firm,$url) . '.json',array("Content-type" => "application/json; charset=utf-8"),$body);
         if(floor($response->code / 100) >= 4) {
             throw new \Error($response->body->errors->error[0]);
         }
@@ -75,10 +74,10 @@ class FacturationPro {
         return $this->parser->parse($response->body,$entityClass);
     }
 
-    public function patch($firm, $url, $id, $object, $entityClass)
+    public function patch($firm, $url, $id, $object, $entityClass, $routeClass)
     {
-        $body = \Unirest\Request\Body::json($this->serializer($object));
-        $response = \Unirest\Request::patch($this->apiUrl . self::url($firm,$url) .'/'.$id. '.json',array(),$body);
+        $body = \Unirest\Request\Body::json($this->serializer->serialize($object,$routeClass));
+        $response = \Unirest\Request::patch($this->apiUrl . self::url($firm,$url) .'/'.$id. '.json',array("Content-type" => "application/json; charset=utf-8"),$body);
         if(floor($response->code / 100) >= 4) {
             throw new \Error($response->body->errors->error[0]);
         }
@@ -92,7 +91,7 @@ class FacturationPro {
         if(floor($response->code / 100) >= 4) {
             throw new \Error($response->body->errors->error[0]);
         }
-        return;
+        return true;
     }
 
     public function setFirm($idFirm)
@@ -105,7 +104,7 @@ class FacturationPro {
         if($firm)
         {
             if($this->currentIdFirm)
-                $url = '/firms/'.$this->currentIdFirm.'/'.$url;
+                $url = 'firms/'.$this->currentIdFirm.'/'.$url;
             else
                 throw new \Error("You need to set a firm.");
         }

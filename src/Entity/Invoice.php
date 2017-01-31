@@ -189,7 +189,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getInvoicedOn()
     {
@@ -197,7 +197,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getTermOn()
     {
@@ -357,7 +357,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -365,7 +365,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -429,7 +429,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getPaidOn()
     {
@@ -493,7 +493,7 @@ class Invoice {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getHardDeleteOn()
     {
@@ -508,6 +508,372 @@ class Invoice {
         return $this->items;
     }
 
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
 
+    /**
+     * @param Customer $customer
+     */
+    public function setCustomer($customer)
+    {
+        $this->customer = $customer;
+    }
+
+    /**
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @param Language $language
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
+    /**
+     * @param Category $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @param Followup $followup_id
+     */
+    public function setFollowupId($followup_id)
+    {
+        $this->followup_id = $followup_id;
+    }
+
+    /**
+     * @param \DateTime $invoiced_on
+     */
+    public function setInvoicedOn($invoiced_on)
+    {
+        $this->invoiced_on = $invoiced_on;
+    }
+
+    /**
+     * @param \DateTime $term_on
+     */
+    public function setTermOn($term_on)
+    {
+        $this->term_on = $term_on;
+    }
+
+    /**
+     * @param bool $draft
+     */
+    public function setDraft($draft)
+    {
+        $this->draft = $draft;
+    }
+
+    /**
+     * @param float $total
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+    }
+
+    /**
+     * @param float $total_with_vat
+     */
+    public function setTotalWithVat($total_with_vat)
+    {
+        $this->total_with_vat = $total_with_vat;
+    }
+
+    /**
+     * @param Currency $currency
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+    }
+
+    /**
+     * @param float $rebate_percentage
+     */
+    public function setRebatePercentage($rebate_percentage)
+    {
+        $this->rebate_percentage = $rebate_percentage;
+    }
+
+    /**
+     * @param VatExemptionReason $vat_exemption_reason
+     */
+    public function setVatExemptionReason($vat_exemption_reason)
+    {
+        $this->vat_exemption_reason = $vat_exemption_reason;
+    }
+
+    /**
+     * @param string $vat_exemption_other
+     */
+    public function setVatExemptionOther($vat_exemption_other)
+    {
+        $this->vat_exemption_other = $vat_exemption_other;
+    }
+
+    /**
+     * @param string $vat_country
+     */
+    public function setVatCountry($vat_country)
+    {
+        $this->vat_country = $vat_country;
+    }
+
+    /**
+     * @param string $tax_title
+     */
+    public function setTaxTitle($tax_title)
+    {
+        $this->tax_title = $tax_title;
+    }
+
+    /**
+     * @param float $tax_percent
+     */
+    public function setTaxPercent($tax_percent)
+    {
+        $this->tax_percent = $tax_percent;
+    }
+
+    /**
+     * @param float $penalty
+     */
+    public function setPenalty($penalty)
+    {
+        $this->penalty = $penalty;
+    }
+
+    /**
+     * @param PayBefore $pay_before
+     */
+    public function setPayBefore($pay_before)
+    {
+        $this->pay_before = $pay_before;
+    }
+
+    /**
+     * @param float $discount
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+    }
+
+    /**
+     * @param string $precompte
+     */
+    public function setPrecompte($precompte)
+    {
+        $this->precompte = $precompte;
+    }
+
+    /**
+     * @param string $precompte_title
+     */
+    public function setPrecompteTitle($precompte_title)
+    {
+        $this->precompte_title = $precompte_title;
+    }
+
+    /**
+     * @param bool $service_personne
+     */
+    public function setServicePersonne($service_personne)
+    {
+        $this->service_personne = $service_personne;
+    }
+
+    /**
+     * @param string $accounting_entry
+     */
+    public function setAccountingEntry($accounting_entry)
+    {
+        $this->accounting_entry = $accounting_entry;
+    }
+
+    /**
+     * @param string $information
+     */
+    public function setInformation($information)
+    {
+        $this->information = $information;
+    }
+
+    /**
+     * @param string $internal_note
+     */
+    public function setInternalNote($internal_note)
+    {
+        $this->internal_note = $internal_note;
+    }
+
+    /**
+     * @param \DateTime $created_at
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
+
+    /**
+     * @param \DateTime $updated_at
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+    }
+
+    /**
+     * @param Customer $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+
+    /**
+     * @param string $api_id
+     */
+    public function setApiId($api_id)
+    {
+        $this->api_id = $api_id;
+    }
+
+    /**
+     * @param string $api_custom
+     */
+    public function setApiCustom($api_custom)
+    {
+        $this->api_custom = $api_custom;
+    }
+
+    /**
+     * @param Quote $quote
+     */
+    public function setQuote($quote)
+    {
+        $this->quote = $quote;
+    }
+
+    /**
+     * @param string $invoice_ref
+     */
+    public function setInvoiceRef($invoice_ref)
+    {
+        $this->invoice_ref = $invoice_ref;
+    }
+
+    /**
+     * @param string $external_ref
+     */
+    public function setExternalRef($external_ref)
+    {
+        $this->external_ref = $external_ref;
+    }
+
+    /**
+     * @param PaymentMode $payment_mode
+     */
+    public function setPaymentMode($payment_mode)
+    {
+        $this->payment_mode = $payment_mode;
+    }
+
+    /**
+     * @param \DateTime $paid_on
+     */
+    public function setPaidOn($paid_on)
+    {
+        $this->paid_on = $paid_on;
+    }
+
+    /**
+     * @param string $payment_ref
+     */
+    public function setPaymentRef($payment_ref)
+    {
+        $this->payment_ref = $payment_ref;
+    }
+
+    /**
+     * @param float $paid_in_euros
+     */
+    public function setPaidInEuros($paid_in_euros)
+    {
+        $this->paid_in_euros = $paid_in_euros;
+    }
+
+    /**
+     * @param Invoice $refund
+     */
+    public function setRefund($refund)
+    {
+        $this->refund = $refund;
+    }
+
+    /**
+     * @param string $pay_url
+     */
+    public function setPayUrl($pay_url)
+    {
+        $this->pay_url = $pay_url;
+    }
+
+    /**
+     * @param float $balance
+     */
+    public function setBalance($balance)
+    {
+        $this->balance = $balance;
+    }
+
+    /**
+     * @param string $external
+     */
+    public function setExternal($external)
+    {
+        $this->external = $external;
+    }
+
+    /**
+     * @param bool $soft_deleted
+     */
+    public function setSoftDeleted($soft_deleted)
+    {
+        $this->soft_deleted = $soft_deleted;
+    }
+
+    /**
+     * @param \DateTime $hard_delete_on
+     */
+    public function setHardDeleteOn($hard_delete_on)
+    {
+        $this->hard_delete_on = $hard_delete_on;
+    }
+
+    /**
+     * @param Item[] $items
+     */
+    public function setItems($items)
+    {
+        $this->items = $items;
+    }
 }
 ?>

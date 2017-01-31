@@ -18,6 +18,27 @@ class Invoice
     /** @var string */
     protected $entity;
 
+    /** @var array */
+    protected $readable = [
+        'id',
+        'customer_identity',
+        'draft',
+        'total',
+        'total_with_vat',
+        'created_at',
+        'updated_at',
+        'vat_exemption_reason',
+        'vat_exemption_other',
+        'quote_id',
+        'invoice_ref',
+        'refund_id',
+        'pay_url',
+        'balance',
+        'external',
+        'soft_deleted',
+        'hard_deleted_on'
+    ];
+
     /** @var bool */
     protected $with_details;
 
@@ -96,37 +117,35 @@ class Invoice
         $this->entity = \FacturationPro\Entity\Invoice::class;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getReadable()
+    {
+        return $this->readable;
+    }
+
     public function getAll()
     {
-        $params = array(
-            "with_details" => $this->with_details,
-            "page" => $this->page,
-            "api_id" => $this->api_id,
-            "api_custom" => $this->api_custom,
-            "invoice_ref" => $this->invoice_ref,
-            "payment_ref" => $this->payment_ref,
-            "title" => $this->title,
-            "company" => $this->company,
-            "last_name" => $this->last_name,
-            "bill_type" => $this->bill_type,
-            "period_start" => $this->period_start->format("m/Y"),
-            "period_end" => $this->period_end->format("m/Y"),
-            "period_type" => $this->period_type,
-            "sort" => $this->sort,
-            "order" => $this->order
-        );
-        if(isset($this->category))
-            $params = array(
-                "category_id" => $this->category->getId()
-            );
-        if(isset($this->followup))
-            $params = array(
-                "followup_id" => $this->followup->getId()
-            );
-        if(isset($this->customer))
-            $params = array(
-                "customer_id" => $this->customer->getId()
-            );
+        $params = array();
+        if($this->with_details) $params["with_details"] = $this->with_details;
+        if($this->page) $params["page"] = $this->page;
+        if($this->api_id) $params["api_id"] = $this->api_id;
+        if($this->api_custom) $params["api_custom"] = $this->api_custom;
+        if($this->invoice_ref) $params["invoice_ref"] = $this->invoice_ref;
+        if($this->payment_ref) $params["payment_ref"] = $this->payment_ref;
+        if($this->title) $params["title"] = $this->title;
+        if($this->company) $params["company"] = $this->company;
+        if($this->bill_type) $params["bill_type"] = $this->bill_type;
+        if($this->period_start) $params["period_start"] = $this->period_start->format("m/Y");
+        if($this->period_end) $params["period_end"] = $this->period_end->format("m/Y");
+        if($this->period_type) $params["period_type"] = $this->period_type;
+        if($this->sort) $params["sort"] = $this->sort;
+        if($this->order) $params["order"] = $this->order;
+        if($this->category) $params["category_id"] = $this->category->getId();
+        if($this->category) $params["category_id"] = $this->category->getId();
+        if($this->followup) $params["followup_id"] = $this->followup->getId();
+        if($this->customer) $params["customer_id"] = $this->customer->getId();
         return $this->master->getAll($this->firm, $this->url, $this->entity,$params);
     }
 
@@ -137,12 +156,13 @@ class Invoice
 
     public function post(\FacturationPro\Entity\Invoice $invoice)
     {
-        return $this->master->post($this->firm,$this->url,$invoice,$this->entity);
+        return $this->master->post($this->firm,$this->url,$invoice,$this->entity,$this);
     }
 
     public function patch(\FacturationPro\Entity\Invoice $invoice)
     {
-        return $this->master->patch($this->firm,$this->url,$invoice->getId(),$invoice,$this->entity);
+        $idInvoice = $invoice->getId();
+        return $this->master->patch($this->firm,$this->url,$idInvoice,$invoice,$this->entity,$this);
     }
 
     public function remove(\FacturationPro\Entity\Invoice $invoice)
