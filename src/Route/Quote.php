@@ -119,7 +119,7 @@ class Quote
                 "followup_id" => $this->followup->getId()
             );
 
-        return $this->master->getAll($this->url,$this->firm, $this->entity,$params);
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
 

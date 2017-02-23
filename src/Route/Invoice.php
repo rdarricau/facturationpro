@@ -146,7 +146,7 @@ class Invoice
         if($this->category) $params["category_id"] = $this->category->getId();
         if($this->followup) $params["followup_id"] = $this->followup->getId();
         if($this->customer) $params["customer_id"] = $this->customer->getId();
-        return $this->master->getAll($this->firm, $this->url, $this->entity,$params);
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
     public function get($id)
