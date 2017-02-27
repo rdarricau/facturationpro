@@ -26,6 +26,6 @@ class Order
 
     public function getAll()
     {
-        return $this->master->getAll($this->url,$this->firm, $this->entity);
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 }

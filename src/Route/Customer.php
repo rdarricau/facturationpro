@@ -78,7 +78,7 @@ class Customer
                 "category_id" => $this->category->getId()
             );
 
-        return $this->master->getAll($this->url,$this->firm, $this->entity,$params);
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
     public function get($idCustomer)
