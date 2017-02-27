@@ -122,5 +122,105 @@ class Item {
     {
         return $this->nature;
     }
+
+    /**
+     * @param float $quantity
+     * @return Item
+     */
+    public function setQuantity(float $quantity): Item
+    {
+        $this->quantity = $quantity;
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     * @return Item
+     */
+    public function setTitle(string $title): Item
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @param float $unit_price
+     * @return Item
+     */
+    public function setUnitPrice(float $unit_price): Item
+    {
+        $this->unit_price = $unit_price;
+        return $this;
+    }
+
+    /**
+     * @param float $vat
+     * @return Item
+     */
+    public function setVat(float $vat): Item
+    {
+        $this->vat = $vat;
+        return $this;
+    }
+
+    /**
+     * @param Product $product
+     * @return Item
+     */
+    public function setProduct(Product $product): Item
+    {
+        $this->product = $product;
+        return $this;
+    }
+
+    /**
+     * @param int $position
+     * @return Item
+     */
+    public function setPosition(int $position): Item
+    {
+        $this->position = $position;
+        return $this;
+    }
+
+    /**
+     * @param float $total
+     * @return Item
+     */
+    public function setTotal(float $total): Item
+    {
+        $this->total = $total;
+        return $this;
+    }
+
+    /**
+     * @param bool $optional
+     * @return Item
+     */
+    public function setOptional(bool $optional): Item
+    {
+        $this->optional = $optional;
+        return $this;
+    }
+
+    /**
+     * @param string $style
+     * @return Item
+     */
+    public function setStyle(string $style): Item
+    {
+        $this->style = $style;
+        return $this;
+    }
+
+    /**
+     * @param Nature $nature
+     * @return Item
+     */
+    public function setNature(Nature $nature): Item
+    {
+        $this->nature = $nature;
+        return $this;
+    }
 }
 ?>
