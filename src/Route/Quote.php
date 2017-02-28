@@ -122,6 +122,27 @@ class Quote
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
+    public function get($id)
+    {
+        $params = array();
+        return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
+    }
+
+    public function post(\FacturationPro\Entity\Quote $quote)
+    {
+        return $this->master->post($this->firm,$this->url,$quote,$this->entity,$this);
+    }
+
+    public function patch(\FacturationPro\Entity\Quote $quote)
+    {
+        return $this->master->patch($this->firm,$this->url,$quote->getId(),$quote,$this->entity,$this);
+    }
+
+    public function remove(\FacturationPro\Entity\Quote $quote)
+    {
+        return $this->master->remove($this->firm,$this->url,$quote->getId());
+    }
+
 
     /**
      * @param int $page

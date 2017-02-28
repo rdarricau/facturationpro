@@ -162,8 +162,7 @@ class Invoice
 
     public function patch(\FacturationPro\Entity\Invoice $invoice)
     {
-        $idInvoice = $invoice->getId();
-        return $this->master->patch($this->firm,$this->url,$idInvoice,$invoice,$this->entity,$this);
+        return $this->master->patch($this->firm,$this->url,$invoice->getId(),$invoice,$this->entity,$this);
     }
 
     public function remove(\FacturationPro\Entity\Invoice $invoice)

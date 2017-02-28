@@ -9,9 +9,6 @@ namespace FacturationPro\Route;
  */
 class Account
 {
-    /** @var \FacturationPro\FacturationPro  */
-    protected $master;
-
     /** @var string */
     protected $url = "account";
 

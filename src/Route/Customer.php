@@ -87,6 +87,21 @@ class Customer
             "with_sepa" => $this->with_sepa
         );
         return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
+    }    
+
+    public function post(\FacturationPro\Entity\Customer $customer)
+    {
+        return $this->master->post($this->firm,$this->url,$customer,$this->entity,$this);
+    }
+
+    public function patch(\FacturationPro\Entity\Customer $customer)
+    {
+        return $this->master->patch($this->firm,$this->url,$customer->getId(),$customer,$this->entity,$this);
+    }
+
+    public function remove(\FacturationPro\Entity\Customer $customer)
+    {
+        return $this->master->remove($this->firm,$this->url,$customer->getId());
     }
 
     /**
