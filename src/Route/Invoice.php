@@ -18,27 +18,6 @@ class Invoice
     /** @var string */
     protected $entity;
 
-    /** @var array */
-    protected $readable = [
-        'id',
-        'customer_identity',
-        'draft',
-        'total',
-        'total_with_vat',
-        'created_at',
-        'updated_at',
-        'vat_exemption_reason',
-        'vat_exemption_other',
-        'quote_id',
-        'invoice_ref',
-        'refund_id',
-        'pay_url',
-        'balance',
-        'external',
-        'soft_deleted',
-        'hard_deleted_on'
-    ];
-
     /** @var bool */
     protected $with_details;
 
@@ -115,14 +94,6 @@ class Invoice
     {
         $this->master = $master;
         $this->entity = \FacturationPro\Entity\Invoice::class;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReadable()
-    {
-        return $this->readable;
     }
 
     public function getAll()
