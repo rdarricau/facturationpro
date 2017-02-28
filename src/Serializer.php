@@ -39,7 +39,7 @@ class Serializer
             }
             elseif(is_object($value) && strpos(get_class($value),"FacturationPro") !== false)
                 $value = self::object($value,$depth + 1, $route);
-            if(method_exists($object,"set".str_replace("_","",ucwords($property->getName(),"_"))))
+            if(method_exists($object,"set".str_replace("_","",ucwords($property->getName(),"_"))) && !is_null($value))
                 $array[$property->getName()] = $value;
         }
         return $array;

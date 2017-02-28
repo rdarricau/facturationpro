@@ -101,7 +101,7 @@ class FacturationPro {
     public function getError($response)
     {
         if(floor($response->code / 100) >= 4) {
-            throw new \Error($response->body->errors->base[0]);
+            throw new \Error($response->raw_body);
         }
     }    
 }

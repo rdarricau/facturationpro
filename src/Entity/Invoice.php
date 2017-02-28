@@ -8,6 +8,9 @@ class Invoice {
  	/** @var  Customer */
  	protected $customer;
 
+ 	/** @var  integer */
+ 	protected $customer_id;
+
  	/** @var  string */
  	protected $title;
 
@@ -514,6 +517,7 @@ class Invoice {
      */
     public function setCustomer($customer)
     {
+        $this->customer_id = $customer->getId();
         $this->customer = $customer;
         return $this;
     }
@@ -825,6 +829,16 @@ class Invoice {
     public function setItems($items)
     {
         $this->items = $items;
+        return $this;
+    }
+
+    /**
+     * @param int $customer_id
+     * @return Invoice
+     */
+    public function setCustomerId($customer_id)
+    {
+        $this->customer_id = $customer_id;
         return $this;
     }
 }
