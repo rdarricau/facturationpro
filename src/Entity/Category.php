@@ -57,6 +57,24 @@ class Category {
         return $this->updated_at;
     }
 
+    /**
+     * @param string $title
+     * @return Category
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
 
+    /**
+     * @param CategoryStatus $status
+     * @return Category
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
 }
 ?>

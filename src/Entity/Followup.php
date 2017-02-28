@@ -56,5 +56,25 @@ class Followup {
     {
         return $this->updated_at;
     }
+
+    /**
+     * @param string $title
+     * @return Followup
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @param FollowupStatus $status
+     * @return Followup
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
+    }
 }
 ?>
