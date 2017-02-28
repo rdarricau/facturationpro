@@ -21,6 +21,9 @@ class Item {
  	protected $product;
 
     /** @var integer */
+    protected $product_id;
+
+    /** @var integer */
  	protected $position;
 
     /** @var float */
@@ -124,6 +127,14 @@ class Item {
     }
 
     /**
+     * @return int
+     */
+    public function getProductId()
+    {
+        return $this->product_id;
+    }
+
+    /**
      * @param float $quantity
      * @return Item
      */
@@ -169,8 +180,17 @@ class Item {
      */
     public function setProduct(Product $product): Item
     {
+        $this->product_id = $product->getId();
         $this->product = $product;
         return $this;
+    }
+
+    /**
+     * @param int $product_id
+     */
+    public function setProductId($product_id)
+    {
+        $this->product_id = $product_id;
     }
 
     /**

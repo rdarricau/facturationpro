@@ -20,8 +20,14 @@ class Invoice {
     /** @var  Category */
  	protected $category;
 
+    /** @var  integer */
+    protected $category_id;
+
     /** @var  Followup */
- 	protected $followup_id;
+ 	protected $followup;
+
+    /** @var  integer */
+    protected $followup_id;
 
     /** @var \DateTime */
  	protected $invoiced_on;
@@ -95,6 +101,9 @@ class Invoice {
     /** @var  Customer */
  	protected $user;
 
+    /** @var  integer */
+    protected $user_id;
+
     /** @var  string */
  	protected $api_id;
 
@@ -103,6 +112,9 @@ class Invoice {
 
     /** @var  Quote */
  	protected $quote;
+
+    /** @var  integer */
+    protected $quote_id;
 
     /** @var  string */
  	protected $invoice_ref;
@@ -124,6 +136,9 @@ class Invoice {
 
     /** @var  Invoice */
  	protected $refund;
+
+    /** @var  integer */
+    protected $refund_id;
 
     /** @var  string */
  	protected $pay_url;
@@ -181,14 +196,6 @@ class Invoice {
     public function getCategory()
     {
         return $this->category;
-    }
-
-    /**
-     * @return Followup
-     */
-    public function getFollowupId()
-    {
-        return $this->followup_id;
     }
 
     /**
@@ -512,6 +519,62 @@ class Invoice {
     }
 
     /**
+     * @return int
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
+
+    /**
+     * @return Followup
+     */
+    public function getFollowup()
+    {
+        return $this->followup;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFollowupId()
+    {
+        return $this->followup_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuoteId()
+    {
+        return $this->quote_id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRefundId()
+    {
+        return $this->refund_id;
+    }
+
+    /**
      * @param Customer $customer
      * @return Invoice
      */
@@ -548,17 +611,8 @@ class Invoice {
      */
     public function setCategory($category)
     {
+        $this->category_id = $category->getId();
         $this->category = $category;
-        return $this;
-    }
-
-    /**
-     * @param Followup $followup_id
-     * @return Invoice
-     */
-    public function setFollowupId($followup_id)
-    {
-        $this->followup_id = $followup_id;
         return $this;
     }
 
@@ -748,6 +802,7 @@ class Invoice {
      */
     public function setUser($user)
     {
+        $this->user_id = $user->getId();
         $this->user = $user;
         return $this;
     }
@@ -839,6 +894,89 @@ class Invoice {
     public function setCustomerId($customer_id)
     {
         $this->customer_id = $customer_id;
+        return $this;
+    }
+
+    /**
+     * @param int $category_id
+     * @return Invoice
+     */
+    public function setCategoryId($category_id)
+    {
+        $this->category_id = $category_id;
+        return $this;
+    }
+
+    /**
+     * @param Followup $followup
+     * @return Invoice
+     */
+    public function setFollowup($followup)
+    {
+        $this->followup_id = $followup->getId();
+        $this->followup = $followup;
+        return $this;
+    }
+
+    /**
+     * @param int $followup_id
+     * @return Invoice
+     */
+    public function setFollowupId($followup_id)
+    {
+        $this->followup_id = $followup_id;
+        return $this;
+    }
+
+    /**
+     * @param int $user_id
+     * @return Invoice
+     */
+    public function setUserId($user_id)
+    {
+        $this->user_id = $user_id;
+        return $this;
+    }
+
+    /**
+     * @param Quote $quote
+     * @return Invoice
+     */
+    public function setQuote($quote)
+    {
+        $this->quote_id = $quote->getId();
+        $this->quote = $quote;
+        return $this;
+    }
+
+    /**
+     * @param int $quote_id
+     * @return Invoice
+     */
+    public function setQuoteId($quote_id)
+    {
+        $this->quote_id = $quote_id;
+        return $this;
+    }
+
+    /**
+     * @param Invoice $refund
+     * @return Invoice
+     */
+    public function setRefund($refund)
+    {
+        $this->refund_id = $refund->getId();
+        $this->refund = $refund;
+        return $this;
+    }
+
+    /**
+     * @param int $refund_id
+     * @return Invoice
+     */
+    public function setRefundId($refund_id)
+    {
+        $this->refund_id = $refund_id;
         return $this;
     }
 }
