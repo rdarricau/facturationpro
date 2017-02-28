@@ -309,5 +309,235 @@ class Supplier {
     {
         return $this->hard_delete_on;
     }
+
+    /**
+     * @param string $company_name
+     * @return Supplier
+     */
+    public function setCompanyName($company_name)
+    {
+        $this->company_name = $company_name;
+        return $this;
+    }
+
+    /**
+     * @param \Civility $civility
+     * @return Supplier
+     */
+    public function setCivility($civility)
+    {
+        $this->civility = $civility;
+        return $this;
+    }
+
+    /**
+     * @param string $first_name
+     * @return Supplier
+     */
+    public function setFirstName($first_name)
+    {
+        $this->first_name = $first_name;
+        return $this;
+    }
+
+    /**
+     * @param string $last_name
+     * @return Supplier
+     */
+    public function setLastName($last_name)
+    {
+        $this->last_name = $last_name;
+        return $this;
+    }
+
+    /**
+     * @param string $short_name
+     * @return Supplier
+     */
+    public function setShortName($short_name)
+    {
+        $this->short_name = $short_name;
+        return $this;
+    }
+
+    /**
+     * @param string $street
+     * @return Supplier
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+        return $this;
+    }
+
+    /**
+     * @param string $city
+     * @return Supplier
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+        return $this;
+    }
+
+    /**
+     * @param string $zip_code
+     * @return Supplier
+     */
+    public function setZipCode($zip_code)
+    {
+        $this->zip_code = $zip_code;
+        return $this;
+    }
+
+    /**
+     * @param Country $country
+     * @return Supplier
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+        return $this;
+    }
+
+    /**
+     * @param string $phone
+     * @return Supplier
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * @param string $fax
+     * @return Supplier
+     */
+    public function setFax($fax)
+    {
+        $this->fax = $fax;
+        return $this;
+    }
+
+    /**
+     * @param string $email
+     * @return Supplier
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @param string $mobile
+     * @return Supplier
+     */
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
+        return $this;
+    }
+
+    /**
+     * @param string $website
+     * @return Supplier
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+        return $this;
+    }
+
+    /**
+     * @param text $notes
+     * @return Supplier
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+        return $this;
+    }
+
+    /**
+     * @param string $vat_number
+     * @return Supplier
+     */
+    public function setVatNumber($vat_number)
+    {
+        $this->vat_number = $vat_number;
+        return $this;
+    }
+
+    /**
+     * @param string $siret
+     * @return Supplier
+     */
+    public function setSiret($siret)
+    {
+        $this->siret = $siret;
+        return $this;
+    }
+
+    /**
+     * @param Category $category
+     * @return Supplier
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @param string $account_code
+     * @return Supplier
+     */
+    public function setAccountCode($account_code)
+    {
+        $this->account_code = $account_code;
+        return $this;
+    }
+
+    /**
+     * @param string $accounting_entry
+     * @return Supplier
+     */
+    public function setAccountingEntry($accounting_entry)
+    {
+        $this->accounting_entry = $accounting_entry;
+        return $this;
+    }
+
+    /**
+     * @param string $api_id
+     * @return Supplier
+     */
+    public function setApiId($api_id)
+    {
+        $this->api_id = $api_id;
+        return $this;
+    }
+
+    /**
+     * @param string $api_custom
+     * @return Supplier
+     */
+    public function setApiCustom($api_custom)
+    {
+        $this->api_custom = $api_custom;
+        return $this;
+    }
+
+    /**
+     * @param string $reverse_charge
+     * @return Supplier
+     */
+    public function setReverseCharge($reverse_charge)
+    {
+        $this->reverse_charge = $reverse_charge;
+        return $this;
+    }
 }
 ?>

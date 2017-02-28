@@ -342,5 +342,245 @@ class Purchase {
     {
         return $this->api_custom;
     }
+
+    /**
+     * @param Supplier $supplier
+     * @return Purchase
+     */
+    public function setSupplier($supplier)
+    {
+        $this->supplier = $supplier;
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     * @return Purchase
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @param string $ref
+     * @return Purchase
+     */
+    public function setRef($ref)
+    {
+        $this->ref = $ref;
+        return $this;
+    }
+
+    /**
+     * @param float $total_with_vat
+     * @return Purchase
+     */
+    public function setTotalWithVat($total_with_vat)
+    {
+        $this->total_with_vat = $total_with_vat;
+        return $this;
+    }
+
+    /**
+     * @param float $vat_amount
+     * @return Purchase
+     */
+    public function setVatAmount($vat_amount)
+    {
+        $this->vat_amount = $vat_amount;
+        return $this;
+    }
+
+    /**
+     * @param Currency $currency
+     * @return Purchase
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $invoiced_on
+     * @return Purchase
+     */
+    public function setInvoicedOn($invoiced_on)
+    {
+        $this->invoiced_on = $invoiced_on;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $term_on
+     * @return Purchase
+     */
+    public function setTermOn($term_on)
+    {
+        $this->term_on = $term_on;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $paid_on
+     * @return Purchase
+     */
+    public function setPaidOn($paid_on)
+    {
+        $this->paid_on = $paid_on;
+        return $this;
+    }
+
+    /**
+     * @param PaymentMode $payment_mode
+     * @return Purchase
+     */
+    public function setPaymentMode($payment_mode)
+    {
+        $this->payment_mode = $payment_mode;
+        return $this;
+    }
+
+    /**
+     * @param string $payment_ref
+     * @return Purchase
+     */
+    public function setPaymentRef($payment_ref)
+    {
+        $this->payment_ref = $payment_ref;
+        return $this;
+    }
+
+    /**
+     * @param float $paid_in_euros
+     * @return Purchase
+     */
+    public function setPaidInEuros($paid_in_euros)
+    {
+        $this->paid_in_euros = $paid_in_euros;
+        return $this;
+    }
+
+    /**
+     * @param bool $draft
+     * @return Purchase
+     */
+    public function setDraft($draft)
+    {
+        $this->draft = $draft;
+        return $this;
+    }
+
+    /**
+     * @param bool $reverse_charge
+     * @return Purchase
+     */
+    public function setReverseCharge($reverse_charge)
+    {
+        $this->reverse_charge = $reverse_charge;
+        return $this;
+    }
+
+    /**
+     * @param bool $prepaid
+     * @return Purchase
+     */
+    public function setPrepaid($prepaid)
+    {
+        $this->prepaid = $prepaid;
+        return $this;
+    }
+
+    /**
+     * @param text $notes
+     * @return Purchase
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+        return $this;
+    }
+
+    /**
+     * @param bool $skip_export
+     * @return Purchase
+     */
+    public function setSkipExport($skip_export)
+    {
+        $this->skip_export = $skip_export;
+        return $this;
+    }
+
+    /**
+     * @param Category $category
+     * @return Purchase
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @param string $accounting_entry
+     * @return Purchase
+     */
+    public function setAccountingEntry($accounting_entry)
+    {
+        $this->accounting_entry = $accounting_entry;
+        return $this;
+    }
+
+    /**
+     * @param string $accounting_asset
+     * @return Purchase
+     */
+    public function setAccountingAsset($accounting_asset)
+    {
+        $this->accounting_asset = $accounting_asset;
+        return $this;
+    }
+
+    /**
+     * @param \DateTime $asset_end_on
+     * @return Purchase
+     */
+    public function setAssetEndOn($asset_end_on)
+    {
+        $this->asset_end_on = $asset_end_on;
+        return $this;
+    }
+
+    /**
+     * @param string $asset_end_reason
+     * @return Purchase
+     */
+    public function setAssetEndReason($asset_end_reason)
+    {
+        $this->asset_end_reason = $asset_end_reason;
+        return $this;
+    }
+
+    /**
+     * @param string $api_id
+     * @return Purchase
+     */
+    public function setApiId($api_id)
+    {
+        $this->api_id = $api_id;
+        return $this;
+    }
+
+    /**
+     * @param string $api_custom
+     * @return Purchase
+     */
+    public function setApiCustom($api_custom)
+    {
+        $this->api_custom = $api_custom;
+        return $this;
+    }
 }
 ?>

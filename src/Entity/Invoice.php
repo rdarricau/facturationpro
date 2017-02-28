@@ -509,371 +509,323 @@ class Invoice {
     }
 
     /**
-     * @param int $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
      * @param Customer $customer
+     * @return Invoice
      */
     public function setCustomer($customer)
     {
         $this->customer = $customer;
+        return $this;
     }
 
     /**
      * @param string $title
+     * @return Invoice
      */
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
      * @param Language $language
+     * @return Invoice
      */
     public function setLanguage($language)
     {
         $this->language = $language;
+        return $this;
     }
 
     /**
      * @param Category $category
+     * @return Invoice
      */
     public function setCategory($category)
     {
         $this->category = $category;
+        return $this;
     }
 
     /**
      * @param Followup $followup_id
+     * @return Invoice
      */
     public function setFollowupId($followup_id)
     {
         $this->followup_id = $followup_id;
+        return $this;
     }
 
     /**
      * @param \DateTime $invoiced_on
+     * @return Invoice
      */
     public function setInvoicedOn($invoiced_on)
     {
         $this->invoiced_on = $invoiced_on;
+        return $this;
     }
 
     /**
      * @param \DateTime $term_on
+     * @return Invoice
      */
     public function setTermOn($term_on)
     {
         $this->term_on = $term_on;
-    }
-
-    /**
-     * @param bool $draft
-     */
-    public function setDraft($draft)
-    {
-        $this->draft = $draft;
-    }
-
-    /**
-     * @param float $total
-     */
-    public function setTotal($total)
-    {
-        $this->total = $total;
-    }
-
-    /**
-     * @param float $total_with_vat
-     */
-    public function setTotalWithVat($total_with_vat)
-    {
-        $this->total_with_vat = $total_with_vat;
+        return $this;
     }
 
     /**
      * @param Currency $currency
+     * @return Invoice
      */
     public function setCurrency($currency)
     {
         $this->currency = $currency;
+        return $this;
     }
 
     /**
      * @param float $rebate_percentage
+     * @return Invoice
      */
     public function setRebatePercentage($rebate_percentage)
     {
         $this->rebate_percentage = $rebate_percentage;
+        return $this;
     }
 
     /**
      * @param VatExemptionReason $vat_exemption_reason
+     * @return Invoice
      */
     public function setVatExemptionReason($vat_exemption_reason)
     {
         $this->vat_exemption_reason = $vat_exemption_reason;
+        return $this;
     }
 
     /**
      * @param string $vat_exemption_other
+     * @return Invoice
      */
     public function setVatExemptionOther($vat_exemption_other)
     {
         $this->vat_exemption_other = $vat_exemption_other;
+        return $this;
     }
 
     /**
      * @param string $vat_country
+     * @return Invoice
      */
     public function setVatCountry($vat_country)
     {
         $this->vat_country = $vat_country;
+        return $this;
     }
 
     /**
      * @param string $tax_title
+     * @return Invoice
      */
     public function setTaxTitle($tax_title)
     {
         $this->tax_title = $tax_title;
+        return $this;
     }
 
     /**
      * @param float $tax_percent
+     * @return Invoice
      */
     public function setTaxPercent($tax_percent)
     {
         $this->tax_percent = $tax_percent;
+        return $this;
     }
 
     /**
      * @param float $penalty
+     * @return Invoice
      */
     public function setPenalty($penalty)
     {
         $this->penalty = $penalty;
+        return $this;
     }
 
     /**
      * @param PayBefore $pay_before
+     * @return Invoice
      */
     public function setPayBefore($pay_before)
     {
         $this->pay_before = $pay_before;
+        return $this;
     }
 
     /**
      * @param float $discount
+     * @return Invoice
      */
     public function setDiscount($discount)
     {
         $this->discount = $discount;
+        return $this;
     }
 
     /**
      * @param string $precompte
+     * @return Invoice
      */
     public function setPrecompte($precompte)
     {
         $this->precompte = $precompte;
+        return $this;
     }
 
     /**
      * @param string $precompte_title
+     * @return Invoice
      */
     public function setPrecompteTitle($precompte_title)
     {
         $this->precompte_title = $precompte_title;
+        return $this;
     }
 
     /**
      * @param bool $service_personne
+     * @return Invoice
      */
     public function setServicePersonne($service_personne)
     {
         $this->service_personne = $service_personne;
+        return $this;
     }
 
     /**
      * @param string $accounting_entry
+     * @return Invoice
      */
     public function setAccountingEntry($accounting_entry)
     {
         $this->accounting_entry = $accounting_entry;
+        return $this;
     }
 
     /**
      * @param string $information
+     * @return Invoice
      */
     public function setInformation($information)
     {
         $this->information = $information;
+        return $this;
     }
 
     /**
      * @param string $internal_note
+     * @return Invoice
      */
     public function setInternalNote($internal_note)
     {
         $this->internal_note = $internal_note;
-    }
-
-    /**
-     * @param \DateTime $created_at
-     */
-    public function setCreatedAt($created_at)
-    {
-        $this->created_at = $created_at;
-    }
-
-    /**
-     * @param \DateTime $updated_at
-     */
-    public function setUpdatedAt($updated_at)
-    {
-        $this->updated_at = $updated_at;
+        return $this;
     }
 
     /**
      * @param Customer $user
+     * @return Invoice
      */
     public function setUser($user)
     {
         $this->user = $user;
+        return $this;
     }
 
     /**
      * @param string $api_id
+     * @return Invoice
      */
     public function setApiId($api_id)
     {
         $this->api_id = $api_id;
+        return $this;
     }
 
     /**
      * @param string $api_custom
+     * @return Invoice
      */
     public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
-    }
-
-    /**
-     * @param Quote $quote
-     */
-    public function setQuote($quote)
-    {
-        $this->quote = $quote;
-    }
-
-    /**
-     * @param string $invoice_ref
-     */
-    public function setInvoiceRef($invoice_ref)
-    {
-        $this->invoice_ref = $invoice_ref;
+        return $this;
     }
 
     /**
      * @param string $external_ref
+     * @return Invoice
      */
     public function setExternalRef($external_ref)
     {
         $this->external_ref = $external_ref;
+        return $this;
     }
 
     /**
      * @param PaymentMode $payment_mode
+     * @return Invoice
      */
     public function setPaymentMode($payment_mode)
     {
         $this->payment_mode = $payment_mode;
+        return $this;
     }
 
     /**
      * @param \DateTime $paid_on
+     * @return Invoice
      */
     public function setPaidOn($paid_on)
     {
         $this->paid_on = $paid_on;
+        return $this;
     }
 
     /**
      * @param string $payment_ref
+     * @return Invoice
      */
     public function setPaymentRef($payment_ref)
     {
         $this->payment_ref = $payment_ref;
+        return $this;
     }
 
     /**
      * @param float $paid_in_euros
+     * @return Invoice
      */
     public function setPaidInEuros($paid_in_euros)
     {
         $this->paid_in_euros = $paid_in_euros;
-    }
-
-    /**
-     * @param Invoice $refund
-     */
-    public function setRefund($refund)
-    {
-        $this->refund = $refund;
-    }
-
-    /**
-     * @param string $pay_url
-     */
-    public function setPayUrl($pay_url)
-    {
-        $this->pay_url = $pay_url;
-    }
-
-    /**
-     * @param float $balance
-     */
-    public function setBalance($balance)
-    {
-        $this->balance = $balance;
-    }
-
-    /**
-     * @param string $external
-     */
-    public function setExternal($external)
-    {
-        $this->external = $external;
-    }
-
-    /**
-     * @param bool $soft_deleted
-     */
-    public function setSoftDeleted($soft_deleted)
-    {
-        $this->soft_deleted = $soft_deleted;
-    }
-
-    /**
-     * @param \DateTime $hard_delete_on
-     */
-    public function setHardDeleteOn($hard_delete_on)
-    {
-        $this->hard_delete_on = $hard_delete_on;
+        return $this;
     }
 
     /**
      * @param Item[] $items
+     * @return Invoice
      */
     public function setItems($items)
     {
         $this->items = $items;
+        return $this;
     }
 }
 ?>

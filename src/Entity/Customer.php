@@ -530,5 +530,415 @@ class Customer {
     {
         return $this->hard_delete_on;
     }
+
+    /**
+     * @param string $company_name
+     * @return Customer
+     */
+    public function setCompanyName($company_name)
+    {
+        $this->company_name = $company_name;
+        return $this;
+    }
+
+    /**
+     * @param Civility $civility
+     * @return Customer
+     */
+    public function setCivility($civility)
+    {
+        $this->civility = $civility;
+        return $this;
+    }
+
+    /**
+     * @param string $first_name
+     * @return Customer
+     */
+    public function setFirstName($first_name)
+    {
+        $this->first_name = $first_name;
+        return $this;
+    }
+
+    /**
+     * @param string $last_name
+     * @return Customer
+     */
+    public function setLastName($last_name)
+    {
+        $this->last_name = $last_name;
+        return $this;
+    }
+
+    /**
+     * @param string $short_name
+     * @return Customer
+     */
+    public function setShortName($short_name)
+    {
+        $this->short_name = $short_name;
+        return $this;
+    }
+
+    /**
+     * @param string $street
+     * @return Customer
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+        return $this;
+    }
+
+    /**
+     * @param string $city
+     * @return Customer
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+        return $this;
+    }
+
+    /**
+     * @param string $zip_code
+     * @return Customer
+     */
+    public function setZipCode($zip_code)
+    {
+        $this->zip_code = $zip_code;
+        return $this;
+    }
+
+    /**
+     * @param \Country $country
+     * @return Customer
+     */
+    public function setCountry($country)
+    {
+        $this->country = $country;
+        return $this;
+    }
+
+    /**
+     * @param string $phone
+     * @return Customer
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+        return $this;
+    }
+
+    /**
+     * @param string $fax
+     * @return Customer
+     */
+    public function setFax($fax)
+    {
+        $this->fax = $fax;
+        return $this;
+    }
+
+    /**
+     * @param string $email
+     * @return Customer
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+        return $this;
+    }
+
+    /**
+     * @param string $mobile
+     * @return Customer
+     */
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
+        return $this;
+    }
+
+    /**
+     * @param string $website
+     * @return Customer
+     */
+    public function setWebsite($website)
+    {
+        $this->website = $website;
+        return $this;
+    }
+
+    /**
+     * @param text $notes
+     * @return Customer
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+        return $this;
+    }
+
+    /**
+     * @param string $vat_number
+     * @return Customer
+     */
+    public function setVatNumber($vat_number)
+    {
+        $this->vat_number = $vat_number;
+        return $this;
+    }
+
+    /**
+     * @param string $siret
+     * @return Customer
+     */
+    public function setSiret($siret)
+    {
+        $this->siret = $siret;
+        return $this;
+    }
+
+    /**
+     * @param \Category $category
+     * @return Customer
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @param string $account_code
+     * @return Customer
+     */
+    public function setAccountCode($account_code)
+    {
+        $this->account_code = $account_code;
+        return $this;
+    }
+
+    /**
+     * @param string $accounting_entry
+     * @return Customer
+     */
+    public function setAccountingEntry($accounting_entry)
+    {
+        $this->accounting_entry = $accounting_entry;
+        return $this;
+    }
+
+    /**
+     * @param string $api_id
+     * @return Customer
+     */
+    public function setApiId($api_id)
+    {
+        $this->api_id = $api_id;
+        return $this;
+    }
+
+    /**
+     * @param string $api_custom
+     * @return Customer
+     */
+    public function setApiCustom($api_custom)
+    {
+        $this->api_custom = $api_custom;
+        return $this;
+    }
+
+    /**
+     * @param string $individual
+     * @return Customer
+     */
+    public function setIndividual($individual)
+    {
+        $this->individual = $individual;
+        return $this;
+    }
+
+    /**
+     * @param string $reference
+     * @return Customer
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+        return $this;
+    }
+
+    /**
+     * @param int $penalty
+     * @return Customer
+     */
+    public function setPenalty($penalty)
+    {
+        $this->penalty = $penalty;
+        return $this;
+    }
+
+    /**
+     * @param int $discount
+     * @return Customer
+     */
+    public function setDiscount($discount)
+    {
+        $this->discount = $discount;
+        return $this;
+    }
+
+    /**
+     * @param PayBefore $pay_before
+     * @return Customer
+     */
+    public function setPayBefore($pay_before)
+    {
+        $this->pay_before = $pay_before;
+        return $this;
+    }
+
+    /**
+     * @param int $validity
+     * @return Customer
+     */
+    public function setValidity($validity)
+    {
+        $this->validity = $validity;
+        return $this;
+    }
+
+    /**
+     * @param Currency $currency
+     * @return Customer
+     */
+    public function setCurrency($currency)
+    {
+        $this->currency = $currency;
+        return $this;
+    }
+
+    /**
+     * @param Language $language
+     * @return Customer
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+        return $this;
+    }
+
+    /**
+     * @param string $default_vat
+     * @return Customer
+     */
+    public function setDefaultVat($default_vat)
+    {
+        $this->default_vat = $default_vat;
+        return $this;
+    }
+
+    /**
+     * @param VatExemptionReason $vat_exemption_reason
+     * @return Customer
+     */
+    public function setVatExemptionReason($vat_exemption_reason)
+    {
+        $this->vat_exemption_reason = $vat_exemption_reason;
+        return $this;
+    }
+
+    /**
+     * @param string $vat_exemption_other
+     * @return Customer
+     */
+    public function setVatExemptionOther($vat_exemption_other)
+    {
+        $this->vat_exemption_other = $vat_exemption_other;
+        return $this;
+    }
+
+    /**
+     * @param string $sepa_iban
+     * @return Customer
+     */
+    public function setSepaIban($sepa_iban)
+    {
+        $this->sepa_iban = $sepa_iban;
+        return $this;
+    }
+
+    /**
+     * @param string $sepa_bic
+     * @return Customer
+     */
+    public function setSepaBic($sepa_bic)
+    {
+        $this->sepa_bic = $sepa_bic;
+        return $this;
+    }
+
+    /**
+     * @param string $sepa_rum
+     * @return Customer
+     */
+    public function setSepaRum($sepa_rum)
+    {
+        $this->sepa_rum = $sepa_rum;
+        return $this;
+    }
+
+    /**
+     * @param string $field1
+     * @return Customer
+     */
+    public function setField1($field1)
+    {
+        $this->field1 = $field1;
+        return $this;
+    }
+
+    /**
+     * @param string $field2
+     * @return Customer
+     */
+    public function setField2($field2)
+    {
+        $this->field2 = $field2;
+        return $this;
+    }
+
+    /**
+     * @param string $field3
+     * @return Customer
+     */
+    public function setField3($field3)
+    {
+        $this->field3 = $field3;
+        return $this;
+    }
+
+    /**
+     * @param string $field4
+     * @return Customer
+     */
+    public function setField4($field4)
+    {
+        $this->field4 = $field4;
+        return $this;
+    }
+
+    /**
+     * @param string $field5
+     * @return Customer
+     */
+    public function setField5($field5)
+    {
+        $this->field5 = $field5;
+        return $this;
+    }
 }
 ?>

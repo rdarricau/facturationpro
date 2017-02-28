@@ -184,16 +184,6 @@ class Item {
     }
 
     /**
-     * @param float $total
-     * @return Item
-     */
-    public function setTotal(float $total): Item
-    {
-        $this->total = $total;
-        return $this;
-    }
-
-    /**
      * @param bool $optional
      * @return Item
      */
