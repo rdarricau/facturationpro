@@ -151,7 +151,8 @@ class Invoice
 
     public function get($id)
     {
-        return $this->master->get($this->firm,$this->url,$id,$this->entity);
+        $params = array();
+        return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
     }
 
     public function post(\FacturationPro\Entity\Invoice $invoice)

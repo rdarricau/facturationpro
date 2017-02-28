@@ -11,19 +11,6 @@ namespace FacturationPro;
 
 class Serializer
 {
-    /*public function serialize($object,$route)
-    {
-        $reflectionClass = new \ReflectionClass(get_class($object));
-        $array = array();
-        foreach ($reflectionClass->getProperties() as $property) {
-            $property->setAccessible(true);
-            if(!in_array($property->getName(),$route->getReadable()) && !is_array($property->getValue($object)) && $property->getValue($object))
-                $array[$property->getName()] = $property->getValue($object);
-            $property->setAccessible(false);
-        }
-        return $array;
-    }*/
-
     public function serialize($element, $route)
     {
         $depth = 0;
@@ -52,11 +39,9 @@ class Serializer
             }
             elseif(is_object($value) && strpos(get_class($value),"FacturationPro") !== false)
                 $value = self::object($value,$depth + 1, $route);
-            if(!in_array($property->getName(),$route->getReadable()) && !is_array($property->getValue($object)) && $property->getValue($object))
+            if(method_exists($object,"set".str_replace("_","",ucwords($property->getName(),"_"))))
                 $array[$property->getName()] = $value;
         }
-        dump($object);
-        dump($array);
         return $array;
     }
 }

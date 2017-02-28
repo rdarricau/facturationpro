@@ -29,6 +29,6 @@ class Account
 
     public function get()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
+        return $this->master->getAll($this->firm,$this->url, $this->entity);
     }
 }

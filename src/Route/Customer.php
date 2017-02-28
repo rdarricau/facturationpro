@@ -81,12 +81,12 @@ class Customer
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
-    public function get($idCustomer)
+    public function get($id)
     {
         $params = array(
             "with_sepa" => $this->with_sepa
         );
-        return $this->master->get($this->url,$idCustomer,$this->firm, $this->entity);
+        return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
     }
 
     /**
