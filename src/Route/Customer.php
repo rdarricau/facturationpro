@@ -72,9 +72,7 @@ class Customer
             "order" => $this->order
         );
         if(isset($this->category))
-            $params = array(
-                "category_id" => $this->category->getId()
-            );
+            $params["category_id"]= $this->category->getId();
 
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }

@@ -41,7 +41,15 @@ class Supplier
 
     public function getAll()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        $params = array(
+            "page" => $this->page,
+            "api_id" => $this->api_id,
+            "api_custom" => $this->api_custom,
+            "company" => $this->company,
+            "sort" => $this->sort,
+            "order" => $this->order
+        );
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }    
 
     public function get($id)

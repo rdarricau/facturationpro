@@ -48,12 +48,6 @@ class Quote
     /** @var string **/
     protected $status;
 
-    /** @var  Category */
-    protected $category;
-
-    /** @var  Followup */
-    protected $followup;
-
     /** @var  bool */
     protected $with_details;
 
@@ -104,17 +98,7 @@ class Quote
             "order" => $this->order
         );
         if(isset($this->customer))
-            $params = array(
-                "customer_id" => $this->customer->getId()
-            );
-        if(isset($this->category))
-            $params = array(
-                "category_id" => $this->category->getId()
-            );
-        if(isset($this->followup))
-            $params = array(
-                "followup_id" => $this->followup->getId()
-            );
+            $params["customer_id"]= $this->customer->getId();
 
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
@@ -227,26 +211,6 @@ class Quote
     public function setStatus($status)
     {
         $this->status = $status;
-        return $this;
-    }
-
-    /**
-     * @param Category $category
-     * @return Quote
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-        return $this;
-    }
-
-    /**
-     * @param Followup $followup
-     * @return Quote
-     */
-    public function setFollowup($followup)
-    {
-        $this->followup = $followup;
         return $this;
     }
 

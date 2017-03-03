@@ -70,7 +70,22 @@ class Purchase
 
     public function getAll()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        $params = array(
+            "with_details" => $this->with_details,
+            "page" => $this->page,
+            "api_id" => $this->api_id,
+            "api_custom" => $this->api_custom,
+            "company" => $this->company,
+            "title" => $this->title,
+            "invoice_ref" => $this->invoice_ref,
+            "payment_ref" => $this->payment_ref,
+            "serial_number" => $this->serial_number,
+            "purchase_type" => $this->purchase_type,
+            "sort" => $this->sort,
+            "order" => $this->order
+        );
+
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }    
 
     public function get($id)

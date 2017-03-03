@@ -59,12 +59,6 @@ class Invoice
     CONST BILL_TYPE_REFUND = "refund";
     CONST BILL_TYPE_DRAFT = "draft";
 
-    /** @var  \FacturationPro\Entity\Category */
-    protected $category;
-
-    /** @var  \FacturationPro\Entity\Followup */
-    protected $followup;
-
     /** @var  \DateTime */
     protected $period_start;
 
@@ -96,25 +90,25 @@ class Invoice
 
     public function getAll()
     {
-        $params = array();
-        if($this->with_details) $params["with_details"] = $this->with_details;
-        if($this->page) $params["page"] = $this->page;
-        if($this->api_id) $params["api_id"] = $this->api_id;
-        if($this->api_custom) $params["api_custom"] = $this->api_custom;
-        if($this->invoice_ref) $params["invoice_ref"] = $this->invoice_ref;
-        if($this->payment_ref) $params["payment_ref"] = $this->payment_ref;
-        if($this->title) $params["title"] = $this->title;
-        if($this->company) $params["company"] = $this->company;
-        if($this->bill_type) $params["bill_type"] = $this->bill_type;
-        if($this->period_start) $params["period_start"] = $this->period_start->format("m/Y");
-        if($this->period_end) $params["period_end"] = $this->period_end->format("m/Y");
-        if($this->period_type) $params["period_type"] = $this->period_type;
-        if($this->sort) $params["sort"] = $this->sort;
-        if($this->order) $params["order"] = $this->order;
-        if($this->category) $params["category_id"] = $this->category->getId();
-        if($this->category) $params["category_id"] = $this->category->getId();
-        if($this->followup) $params["followup_id"] = $this->followup->getId();
-        if($this->customer) $params["customer_id"] = $this->customer->getId();
+        $params = array(
+            "with_details" => $this->with_details,
+            "page" => $this->page,
+            "api_id" => $this->api_id,
+            "api_custom" => $this->api_custom,
+            "invoice_ref" => $this->invoice_ref,
+            "payment_ref" => $this->payment_ref,
+            "title" => $this->title,
+            "company" => $this->company,
+            "bill_type" => $this->bill_type,
+            "period_start" => $this->period_start->format("m/Y"),
+            "period_end" => $this->period_end->format("m/Y"),
+            "period_type" => $this->period_type,
+            "sort" => $this->sort,
+            "order" => $this->order
+        );
+        if(isset($this->customer))
+            $params["customer_id"]= $this->customer->getId();
+
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
@@ -246,26 +240,6 @@ class Invoice
     public function setBillType($bill_type)
     {
         $this->bill_type = $bill_type;
-        return $this;
-    }
-
-    /**
-     * @param \FacturationPro\Entity\Category $category
-     * @return Invoice
-     */
-    public function setCategory($category)
-    {
-        $this->category = $category;
-        return $this;
-    }
-
-    /**
-     * @param \FacturationPro\Entity\Followup $followup
-     * @return Invoice
-     */
-    public function setFollowup($followup)
-    {
-        $this->followup = $followup;
         return $this;
     }
 

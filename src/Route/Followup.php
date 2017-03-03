@@ -32,7 +32,12 @@ class Followup
 
     public function getAll()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        $params = array(
+            "page" => $this->page,
+            "title" => $this->title,
+            "status" => $this->status
+        );
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }    
 
     public function get($id)

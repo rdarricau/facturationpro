@@ -20,6 +20,7 @@ class Asset
 
     /** @var \FacturationPro\Entity\Quote **/
     protected $quote;
+
     /** @var string **/
     protected $sort;
 
@@ -37,7 +38,16 @@ class Asset
 
     public function getAll()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        $params = array(
+            "page" => $this->page,
+            "sort" => $this->sort,
+            "order" => $this->order
+        );
+        if(isset($this->quote))
+            $params = array(
+                "quote_id" => $this->quote->getId()
+            );
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }    
 
     public function get($id)

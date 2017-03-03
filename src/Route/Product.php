@@ -46,6 +46,15 @@ class Product
 
     public function getAll()
     {
+        $params = array(
+            "page" => $this->page,
+            "ref" => $this->ref,
+            "title" => $this->title,
+            "api_id" => $this->api_id,
+            "api_custom" => $this->api_custom,
+            "sort" => $this->sort,
+            "order" => $this->order
+        );
         return $this->master->getAll($this->firm,$this->url, $this->entity);
     }    
 
