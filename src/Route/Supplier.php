@@ -15,6 +15,24 @@ class Supplier
     /** @var bool */
     protected $firm = true;
 
+    /** @var int **/
+    protected $page;
+
+    /** @var string **/
+    protected $api_id;
+
+    /** @var string **/
+    protected $api_custom;
+
+    /** @var string **/
+    protected $company;
+
+    /** @var string **/
+    protected $sort;
+
+    /** @var string **/
+    protected $order;
+
     public function __construct(\FacturationPro\FacturationPro $master)
     {
         $this->master = $master;
@@ -45,5 +63,65 @@ class Supplier
     public function remove(\FacturationPro\Entity\Supplier $supplier)
     {
         return $this->master->remove($this->firm,$this->url,$supplier->getId());
+    }
+
+    /**
+     * @param int $page
+     * @return Supplier
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+        return $this;
+    }
+
+    /**
+     * @param string $api_id
+     * @return Supplier
+     */
+    public function setApiId($api_id)
+    {
+        $this->api_id = $api_id;
+        return $this;
+    }
+
+    /**
+     * @param string $api_custom
+     * @return Supplier
+     */
+    public function setApiCustom($api_custom)
+    {
+        $this->api_custom = $api_custom;
+        return $this;
+    }
+
+    /**
+     * @param string $company
+     * @return Supplier
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+        return $this;
+    }
+
+    /**
+     * @param string $sort
+     * @return Supplier
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+        return $this;
+    }
+
+    /**
+     * @param string $order
+     * @return Supplier
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+        return $this;
     }
 }

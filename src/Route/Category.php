@@ -15,6 +15,15 @@ class Category
     /** @var bool */
     protected $firm = true;
 
+    /** @var int **/
+    protected $page;
+
+    /** @var string **/
+    protected $title;
+
+    /** @var string **/
+    protected $status;
+
     public function __construct(\FacturationPro\FacturationPro $master)
     {
         $this->master = $master;
@@ -23,7 +32,12 @@ class Category
 
     public function getAll()
     {
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        $params = array(
+            "page" => $this->page,
+            "title" => $this->title,
+            "status" => $this->status
+        );
+        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }    
 
     public function get($id)
@@ -45,5 +59,35 @@ class Category
     public function remove(\FacturationPro\Entity\Category $category)
     {
         return $this->master->remove($this->firm,$this->url,$category->getId());
+    }
+
+    /**
+     * @param int $page
+     * @return Category
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     * @return Category
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     * @return Category
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
     }
 }

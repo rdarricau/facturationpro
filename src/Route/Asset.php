@@ -15,6 +15,20 @@ class Asset
     /** @var bool */
     protected $firm = true;
 
+    /** @var int **/
+    protected $page;
+
+    /** @var \FacturationPro\Entity\Quote **/
+    protected $quote;
+    /** @var string **/
+    protected $sort;
+
+    /** @var  string */
+    protected $order;
+
+    const ORDER_TITLE = 'title';
+    const ORDER_SIZE = 'size';
+
     public function __construct(\FacturationPro\FacturationPro $master)
     {
         $this->master = $master;
@@ -30,5 +44,45 @@ class Asset
     {
         $params = array();
         return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
+    }
+
+    /**
+     * @param int $page
+     * @return Asset
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+        return $this;
+    }
+
+    /**
+     * @param \FacturationPro\Entity\Quote $quote
+     * @return Asset
+     */
+    public function setQuote($quote)
+    {
+        $this->quote = $quote;
+        return $this;
+    }
+
+    /**
+     * @param string $sort
+     * @return Asset
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+        return $this;
+    }
+
+    /**
+     * @param string $order
+     * @return Asset
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+        return $this;
     }
 }

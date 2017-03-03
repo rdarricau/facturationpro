@@ -87,8 +87,6 @@ class Invoice
     CONST ORDER_TOTAL = "total";
     CONST ORDER_BILLED = "billed";
     CONST ORDER_TERM = "term";
-    CONST ORDER_CREATED = "created";
-    CONST ORDER_UPDATED = "updated";
 
     public function __construct(\FacturationPro\FacturationPro $master)
     {
@@ -143,145 +141,181 @@ class Invoice
 
     /**
      * @param bool $with_details
+     * @return Invoice
      */
     public function setWithDetails($with_details)
     {
         $this->with_details = $with_details;
+        return $this;
     }
 
     /**
      * @param int $page
+     * @return Invoice
      */
     public function setPage($page)
     {
         $this->page = $page;
+        return $this;
     }
 
     /**
      * @param string $api_id
+     * @return Invoice
      */
     public function setApiId($api_id)
     {
         $this->api_id = $api_id;
+        return $this;
     }
 
     /**
      * @param string $api_custom
+     * @return Invoice
      */
     public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
+        return $this;
     }
 
     /**
      * @param string $invoice_ref
+     * @return Invoice
      */
     public function setInvoiceRef($invoice_ref)
     {
         $this->invoice_ref = $invoice_ref;
+        return $this;
     }
 
     /**
      * @param string $payment_ref
+     * @return Invoice
      */
     public function setPaymentRef($payment_ref)
     {
         $this->payment_ref = $payment_ref;
+        return $this;
     }
 
     /**
      * @param string $title
+     * @return Invoice
      */
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
-     * @param int $customer_id
+     * @param \FacturationPro\Entity\Customer $customer
+     * @return Invoice
      */
-    public function setCustomerId($customer_id)
+    public function setCustomer($customer)
     {
-        $this->customer_id = $customer_id;
+        $this->customer = $customer;
+        return $this;
     }
 
     /**
      * @param string $company
+     * @return Invoice
      */
     public function setCompany($company)
     {
         $this->company = $company;
+        return $this;
     }
 
     /**
      * @param string $last_name
+     * @return Invoice
      */
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
+        return $this;
     }
 
     /**
      * @param string $bill_type
+     * @return Invoice
      */
     public function setBillType($bill_type)
     {
         $this->bill_type = $bill_type;
+        return $this;
     }
 
     /**
-     * @param int $category_id
+     * @param \FacturationPro\Entity\Category $category
+     * @return Invoice
      */
-    public function setCategoryId($category_id)
+    public function setCategory($category)
     {
-        $this->category_id = $category_id;
+        $this->category = $category;
+        return $this;
     }
 
     /**
-     * @param int $followup_id
+     * @param \FacturationPro\Entity\Followup $followup
+     * @return Invoice
      */
-    public function setFollowupId($followup_id)
+    public function setFollowup($followup)
     {
-        $this->followup_id = $followup_id;
+        $this->followup = $followup;
+        return $this;
     }
 
     /**
      * @param \DateTime $period_start
+     * @return Invoice
      */
     public function setPeriodStart($period_start)
     {
         $this->period_start = $period_start;
+        return $this;
     }
 
     /**
      * @param \DateTime $period_end
+     * @return Invoice
      */
     public function setPeriodEnd($period_end)
     {
         $this->period_end = $period_end;
+        return $this;
     }
 
     /**
      * @param string $period_type
+     * @return Invoice
      */
     public function setPeriodType($period_type)
     {
         $this->period_type = $period_type;
+        return $this;
     }
 
     /**
      * @param string $sort
+     * @return Invoice
      */
     public function setSort($sort)
     {
         $this->sort = $sort;
+        return $this;
     }
 
     /**
      * @param string $order
+     * @return Invoice
      */
     public function setOrder($order)
     {
         $this->order = $order;
+        return $this;
     }
 }

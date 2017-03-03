@@ -51,8 +51,6 @@ class Customer
 
     const ORDER_LAST_INVOICE = 'last_invoice';
     const ORDER_LAST_PAID = 'last_paid';
-    const ORDER_CREATED = 'created';
-    const ORDER_UPDATED = 'updated';
 
     public function __construct(\FacturationPro\FacturationPro $master)
     {
@@ -106,81 +104,101 @@ class Customer
 
     /**
      * @param int $page
+     * @return Customer
      */
     public function setPage($page)
     {
         $this->page = $page;
+        return $this;
     }
 
     /**
      * @param string $api_id
+     * @return Customer
      */
     public function setApiId($api_id)
     {
         $this->api_id = $api_id;
+        return $this;
     }
 
     /**
      * @param string $api_custom
+     * @return Customer
      */
     public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
+        return $this;
     }
 
     /**
      * @param string $company
+     * @return Customer
      */
     public function setCompany($company)
     {
         $this->company = $company;
+        return $this;
     }
 
     /**
      * @param string $last_name
+     * @return Customer
      */
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
+        return $this;
     }
 
     /**
      * @param string $email
+     * @return Customer
      */
     public function setEmail($email)
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
      * @param Category $category
+     * @return Customer
      */
     public function setCategory($category)
     {
         $this->category = $category;
+        return $this;
     }
 
     /**
      * @param bool $with_sepa
+     * @return Customer
      */
     public function setWithSepa($with_sepa)
     {
         $this->with_sepa = $with_sepa;
+        return $this;
     }
 
     /**
      * @param string $sort
+     * @return Customer
      */
     public function setSort($sort)
     {
         $this->sort = $sort;
+        return $this;
     }
 
     /**
      * @param string $order
+     * @return Customer
      */
     public function setOrder($order)
     {
         $this->order = $order;
+        return $this;
     }
 }

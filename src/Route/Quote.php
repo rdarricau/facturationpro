@@ -27,7 +27,6 @@ class Quote
     /** @var string **/
     protected $api_id;
 
-
     /** @var string **/
     protected $api_custom;
 
@@ -80,8 +79,6 @@ class Quote
     const ORDER_CUSTOMER = 'customer';
     const ORDER_TOTAL = 'total';
     const ORDER_BILLED = 'billed';
-    const ORDER_CREATED = 'created';
-    const ORDER_UPDATED = 'updated';
 
     public function __construct(\FacturationPro\FacturationPro $master)
     {
@@ -143,132 +140,163 @@ class Quote
         return $this->master->remove($this->firm,$this->url,$quote->getId());
     }
 
-
     /**
      * @param int $page
+     * @return Quote
      */
     public function setPage($page)
     {
         $this->page = $page;
+        return $this;
     }
 
     /**
      * @param string $api_id
+     * @return Quote
      */
     public function setApiId($api_id)
     {
         $this->api_id = $api_id;
+        return $this;
     }
 
     /**
      * @param string $api_custom
+     * @return Quote
      */
     public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
+        return $this;
     }
 
     /**
      * @param string $quote_ref
+     * @return Quote
      */
     public function setQuoteRef($quote_ref)
     {
         $this->quote_ref = $quote_ref;
+        return $this;
     }
 
     /**
      * @param Customer $customer
+     * @return Quote
      */
     public function setCustomer($customer)
     {
         $this->customer = $customer;
+        return $this;
     }
 
     /**
      * @param string $title
+     * @return Quote
      */
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
      * @param string $company
+     * @return Quote
      */
     public function setCompany($company)
     {
         $this->company = $company;
+        return $this;
     }
 
     /**
      * @param string $last_name
+     * @return Quote
      */
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
+        return $this;
     }
 
     /**
      * @param string $status
+     * @return Quote
      */
     public function setStatus($status)
     {
         $this->status = $status;
+        return $this;
     }
 
     /**
      * @param Category $category
+     * @return Quote
      */
     public function setCategory($category)
     {
         $this->category = $category;
+        return $this;
     }
 
     /**
      * @param Followup $followup
+     * @return Quote
      */
     public function setFollowup($followup)
     {
         $this->followup = $followup;
+        return $this;
     }
 
     /**
      * @param bool $with_details
+     * @return Quote
      */
     public function setWithDetails($with_details)
     {
         $this->with_details = $with_details;
+        return $this;
     }
 
     /**
      * @param \DateTime $period_start
+     * @return Quote
      */
     public function setPeriodStart($period_start)
     {
         $this->period_start = $period_start;
+        return $this;
     }
 
     /**
      * @param \DateTime $period_end
+     * @return Quote
      */
     public function setPeriodEnd($period_end)
     {
         $this->period_end = $period_end;
+        return $this;
     }
 
     /**
      * @param string $sort
+     * @return Quote
      */
     public function setSort($sort)
     {
         $this->sort = $sort;
+        return $this;
     }
 
     /**
      * @param string $order
+     * @return Quote
      */
     public function setOrder($order)
     {
         $this->order = $order;
+        return $this;
     }
 }

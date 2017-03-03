@@ -15,6 +15,15 @@ class Followup
     /** @var bool */
     protected $firm = true;
 
+    /** @var int **/
+    protected $page;
+
+    /** @var string **/
+    protected $title;
+
+    /** @var string **/
+    protected $status;
+
     public function __construct(\FacturationPro\FacturationPro $master)
     {
         $this->master = $master;
@@ -45,5 +54,35 @@ class Followup
     public function remove(\FacturationPro\Entity\Followup $followup)
     {
         return $this->master->remove($this->firm,$this->url,$followup->getId());
+    }
+
+    /**
+     * @param int $page
+     * @return Followup
+     */
+    public function setPage($page)
+    {
+        $this->page = $page;
+        return $this;
+    }
+
+    /**
+     * @param string $title
+     * @return Followup
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+    /**
+     * @param string $status
+     * @return Followup
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+        return $this;
     }
 }

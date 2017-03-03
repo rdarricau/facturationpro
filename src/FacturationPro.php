@@ -14,6 +14,9 @@ class FacturationPro {
     const SORT_DESC = "desc";
     const SORT_ASC = "asc";
 
+    const ORDER_CREATED = 'created';
+    const ORDER_UPDATED = 'updated';
+
     public function __construct($login=null,$pass=null,$service=null,$mail=null)
     {
         if (!$login) throw new \Error('You must provide a login');
