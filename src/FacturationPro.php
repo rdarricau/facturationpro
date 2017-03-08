@@ -51,7 +51,7 @@ class FacturationPro {
     {
         $response = \Unirest\Request::get($this->apiUrl . self::url($firm,$url) . '.json',array(),$params);
         self::getError($response);
-        return $this->parser->parse($response->body,$entityClass);
+        return $this->parser->parse($this,$response->body,$entityClass);
     }
 
     public function get($firm, $url,$id,$entityClass, $params=null)
@@ -66,7 +66,7 @@ class FacturationPro {
         $body = \Unirest\Request\Body::json($this->serializer->serialize($object,$routeClass));
         $response = \Unirest\Request::post($this->apiUrl . self::url($firm,$url) . '.json',array("Content-type" => "application/json; charset=utf-8"),$body);
         self::getError($response);
-        return $this->parser->parse($response->body,$entityClass);
+        return $this->parser->parse($this,$response->body,$entityClass);
     }
 
     public function patch($firm, $url, $id, $object, $entityClass, $routeClass)
@@ -74,7 +74,7 @@ class FacturationPro {
         $body = \Unirest\Request\Body::json($this->serializer->serialize($object,$routeClass));
         $response = \Unirest\Request::patch($this->apiUrl . self::url($firm,$url) .'/'.$id. '.json',array("Content-type" => "application/json; charset=utf-8"),$body);
         self::getError($response);
-        return $this->parser->parse($response->body,$entityClass);
+        return $this->parser->parse($this,$response->body,$entityClass);
     }    
 
     public function remove($firm, $url, $id)

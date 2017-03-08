@@ -2,6 +2,9 @@
 namespace FacturationPro\Entity;
 
 class Firm {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var integer */
  	protected $id;
 

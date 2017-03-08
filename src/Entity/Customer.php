@@ -2,8 +2,10 @@
 namespace FacturationPro\Entity;
 
 class Customer {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
 
-    /** @var ineger */
+    /** @var integer */
  	protected $id;
 
     /** @var string */

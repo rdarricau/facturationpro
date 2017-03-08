@@ -9,6 +9,9 @@ namespace FacturationPro\Entity;
  */
 
 class Currency{
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
 
     /** @var  string */
     protected $iso;

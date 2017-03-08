@@ -9,6 +9,8 @@ namespace FacturationPro\Entity;
  */
 
 class PaymentMode {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
 
     /** @var  integer */
     protected $id;

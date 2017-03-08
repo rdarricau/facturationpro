@@ -55,11 +55,10 @@ class Parser
             $sourceReflection = new \ReflectionObject($sourceObject);
             $destinationReflection = new \ReflectionObject($destination);
 
-            if ($destinationReflection->hasProperty("master")) {
-                $propDest = $destinationReflection->getProperty("master");
-                $propDest->setAccessible(true);
-                $propDest->setValue($destination, $this->master);
-            }
+            // For lazyload
+            $propDest = $destinationReflection->getProperty("master");
+            $propDest->setAccessible(true);
+            $propDest->setValue($destination, $this->master);
 
             $sourceProperties = $sourceReflection->getProperties();
             foreach ($sourceProperties as $sourceProperty) {

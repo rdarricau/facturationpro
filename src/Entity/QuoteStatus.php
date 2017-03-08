@@ -9,6 +9,9 @@ namespace FacturationPro\Entity;
  */
 class QuoteStatus
 {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var  int */
     protected $id;
 

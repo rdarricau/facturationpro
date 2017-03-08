@@ -2,6 +2,9 @@
 namespace FacturationPro\Entity;
 
 class Purchase {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var integer */
  	protected $id;
 
@@ -97,8 +100,6 @@ class Purchase {
 
     /** @var  string */
  	protected $api_custom;
-
- 	protected $master;
 
     /**
      * @return int

@@ -2,6 +2,9 @@
 namespace FacturationPro\Entity;
 
 class CategoryStatus{
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var int */
     protected $id;
 

@@ -9,6 +9,9 @@ namespace FacturationPro\Entity;
  */
 class Civility
 {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var  string */
     protected $reference;
 

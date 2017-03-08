@@ -3,6 +3,9 @@
 namespace FacturationPro\Entity;
 
 class Account {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var int **/
  	protected $id;
 

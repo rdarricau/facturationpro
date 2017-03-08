@@ -9,6 +9,9 @@ namespace FacturationPro\Entity;
  */
 class PayBefore
 {
+    /** @var  \FacturationPro\FacturationPro */
+    private $master;
+
     /** @var  string */
     protected $refence;
 
