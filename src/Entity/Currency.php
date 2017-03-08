@@ -10,7 +10,7 @@ namespace FacturationPro\Entity;
 
 class Currency{
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
 
     /** @var  string */

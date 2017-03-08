@@ -10,7 +10,7 @@ namespace FacturationPro\Entity;
 class FollowupStatus
 {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var  int */
     protected $id;

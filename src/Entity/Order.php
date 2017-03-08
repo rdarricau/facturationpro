@@ -10,7 +10,7 @@ namespace FacturationPro\Entity;
 class Order
 {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var  string */
     protected $title;

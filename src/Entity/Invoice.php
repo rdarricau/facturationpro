@@ -3,7 +3,7 @@ namespace FacturationPro\Entity;
 
 class Invoice {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var integer */
  	protected $id;

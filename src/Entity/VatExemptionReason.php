@@ -10,7 +10,7 @@ namespace FacturationPro\Entity;
 class VatExemptionReason
 {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var  int */
     protected $id;

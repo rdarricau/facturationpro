@@ -3,7 +3,7 @@ namespace FacturationPro\Entity;
 
 class Category {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var integer **/
  	protected $id;

@@ -4,7 +4,7 @@ namespace FacturationPro\Entity;
 
 class Product {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var integer */
  	protected $id;

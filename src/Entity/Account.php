@@ -4,7 +4,7 @@ namespace FacturationPro\Entity;
 
 class Account {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var int **/
  	protected $id;

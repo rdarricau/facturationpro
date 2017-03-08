@@ -10,7 +10,7 @@ namespace FacturationPro\Entity;
 class Language
 {
     /** @var  \FacturationPro\FacturationPro */
-    private $master;
+    protected $master;
 
     /** @var  string */
     protected $reference;
