@@ -54,5 +54,4 @@ $fpro->setFirm(36588);
 
 $purchase = $fpro->purchase->get(577061);
 $fpro->purchase->reset();
-dump($purchase->getSupplier());
 dump($purchase);

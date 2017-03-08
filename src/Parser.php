@@ -34,22 +34,19 @@ use FacturationPro\Entity\VatExemptionReason;
  */
 class Parser
 {
-    protected $master;
-
     public function parse($master,$response,$destination)
     {
-        $this->master = $master;
         if(is_array($response))
         {
             foreach($response as &$item)
-                $item = self::object($item,$destination);
+                $item = self::object($master,$item,$destination);
         }
         else
-            $response = self::object($response,$destination);
+            $response = self::object($master,$response,$destination);
         return $response;
     }
 
-    public function object($sourceObject, $destination) {
+    public function object($master, $sourceObject, $destination) {
         if(is_object($sourceObject)) {
             $destination = new $destination();
             $sourceReflection = new \ReflectionObject($sourceObject);
@@ -58,7 +55,7 @@ class Parser
             // For lazyload
             $propDest = $destinationReflection->getProperty("master");
             $propDest->setAccessible(true);
-            $propDest->setValue($destination, $this->master);
+            $propDest->setValue($destination, $master);
 
             $sourceProperties = $sourceReflection->getProperties();
             foreach ($sourceProperties as $sourceProperty) {
@@ -74,7 +71,7 @@ class Parser
                             list(, $type) = $matches;
                         }
                         foreach ($value as &$item)
-                            $item = self::object($item, "\\FacturationPro\\Entity\\" . $type);
+                            $item = self::object($master, $item, "\\FacturationPro\\Entity\\" . $type);
                     }
                     $propDest->setValue($destination, $value);
                 } else {
