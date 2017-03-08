@@ -78,6 +78,12 @@ class Supplier {
  	protected $api_custom;
 
     /** @var string */
+    protected $sepa_iban;
+
+    /** @var string */
+    protected $sepa_bic;
+
+    /** @var string */
  	protected $reverse_charge;
 
     /** @var boolean */
@@ -523,8 +529,7 @@ class Supplier {
     /**
      * @param string $api_custom
      * @return Supplier
-     */
-    public function setApiCustom($api_custom)
+     */    public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
         return $this;
@@ -537,6 +542,42 @@ class Supplier {
     public function setReverseCharge($reverse_charge)
     {
         $this->reverse_charge = $reverse_charge;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSepaIban()
+    {
+        return $this->sepa_iban;
+    }
+
+    /**
+     * @param string $sepa_iban
+     * @return Supplier
+     */
+    public function setSepaIban($sepa_iban)
+    {
+        $this->sepa_iban = $sepa_iban;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSepaBic()
+    {
+        return $this->sepa_bic;
+    }
+
+    /**
+     * @param string $sepa_bic
+     * @return Supplier
+     */
+    public function setSepaBic($sepa_bic)
+    {
+        $this->sepa_bic = $sepa_bic;
         return $this;
     }
 }
