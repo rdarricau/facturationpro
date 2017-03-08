@@ -58,7 +58,7 @@ class FacturationPro {
     {
         $response = \Unirest\Request::get($this->apiUrl . self::url($firm,$url) .'/'.$id. '.json',array(),$params);
         self::getError($response);
-        return $this->parser->parse($response->body,$entityClass);
+        return $this->parser->parse($this,$response->body,$entityClass);
     }
 
     public function post($firm, $url, $object, $entityClass, $routeClass)

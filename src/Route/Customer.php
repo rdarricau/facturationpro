@@ -199,4 +199,22 @@ class Customer
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Customer
+     */
+    public function reset()
+    {
+        $this->setApiCustom(null);
+        $this->setApiId(null);
+        $this->setCategory(null);
+        $this->setCompany(null);
+        $this->setEmail(null);
+        $this->setLastName(null);
+        $this->setOrder(null);
+        $this->setPage(null);
+        $this->setSort(null);
+        $this->setWithSepa(null);
+        return $this;
+    }
 }

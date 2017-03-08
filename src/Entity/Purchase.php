@@ -8,6 +8,9 @@ class Purchase {
     /** @var  Supplier */
     protected $supplier;
 
+    /** @var integer */
+    protected $supplier_id;
+
     /** @var  string */
  	protected $title;
 
@@ -95,6 +98,8 @@ class Purchase {
     /** @var  string */
  	protected $api_custom;
 
+ 	protected $master;
+
     /**
      * @return int
      */
@@ -108,7 +113,8 @@ class Purchase {
      */
     public function getSupplier()
     {
-        return $this->supplier;
+        $supplier = $this->master->supplier->get($this->supplier_id);
+        return $supplier;
     }
 
     /**
@@ -160,7 +166,7 @@ class Purchase {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getInvoicedOn()
     {
@@ -168,7 +174,7 @@ class Purchase {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getTermOn()
     {
@@ -176,7 +182,7 @@ class Purchase {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getPaidOn()
     {
@@ -350,6 +356,7 @@ class Purchase {
     public function setSupplier($supplier)
     {
         $this->supplier = $supplier;
+        $this->supplier_id = $supplier->getId();
         return $this;
     }
 

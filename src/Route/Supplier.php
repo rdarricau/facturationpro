@@ -132,4 +132,18 @@ class Supplier
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Supplier
+     */
+    public function reset()
+    {
+        $this->setPage(null);
+        $this->setApiId(null);
+        $this->setApiCustom(null);
+        $this->setCompany(null);
+        $this->setSort(null);
+        $this->setOrder(null);
+        return $this;
+    }
 }

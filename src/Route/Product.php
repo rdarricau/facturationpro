@@ -148,4 +148,19 @@ class Product
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Product
+     */
+    public function reset()
+    {
+        $this->setPage(null);
+        $this->setRef(null);
+        $this->setTitle(null);
+        $this->setApiId(null);
+        $this->setApiCustom(null);
+        $this->setSort(null);
+        $this->setOrder(null);
+        return $this;
+    }
 }

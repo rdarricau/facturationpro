@@ -34,8 +34,11 @@ use FacturationPro\Entity\VatExemptionReason;
  */
 class Parser
 {
-    public function parse($response,$destination)
+    protected $master;
+
+    public function parse($master,$response,$destination)
     {
+        $this->master = $master;
         if(is_array($response))
         {
             foreach($response as &$item)
@@ -51,6 +54,13 @@ class Parser
             $destination = new $destination();
             $sourceReflection = new \ReflectionObject($sourceObject);
             $destinationReflection = new \ReflectionObject($destination);
+
+            if ($destinationReflection->hasProperty("master")) {
+                $propDest = $destinationReflection->getProperty("master");
+                $propDest->setAccessible(true);
+                $propDest->setValue($destination, $this->master);
+            }
+
             $sourceProperties = $sourceReflection->getProperties();
             foreach ($sourceProperties as $sourceProperty) {
                 $sourceProperty->setAccessible(true);

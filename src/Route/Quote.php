@@ -263,4 +263,28 @@ class Quote
         $this->order = $order;
         return $this;
     }
+
+
+    /**
+     * @return Quote
+     */
+    public function reset()
+    {
+        $this->setWithDetails(null);
+        $this->setPage(null);
+        $this->setApiId(null);
+        $this->setApiCustom(null);
+        $this->setCompany(null);
+        $this->setTitle(null);
+        $this->setQuoteRef(null);
+        $this->setCustomer(null);
+        $this->setTitle(null);
+        $this->setLastName(null);
+        $this->setStatus(null);
+        $this->setPeriodStart(null);
+        $this->setPeriodEnd(null);
+        $this->setSort(null);
+        $this->setOrder(null);
+        return $this;
+    }
 }

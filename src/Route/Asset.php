@@ -95,4 +95,16 @@ class Asset
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Asset
+     */
+    public function reset()
+    {
+        $this->setPage(null);
+        $this->setQuote(null);
+        $this->setSort(null);
+        $this->setOrder(null);
+        return $this;
+    }
 }

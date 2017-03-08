@@ -292,4 +292,28 @@ class Invoice
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Invoice
+     */
+    public function reset()
+    {
+        $this->setSort(null);
+        $this->setPage(null);
+        $this->setOrder(null);
+        $this->setLastName(null);
+        $this->setApiCustom(null);
+        $this->setApiId(null);
+        $this->setBillType(null);
+        $this->setCompany(null);
+        $this->setCustomer(null);
+        $this->setInvoiceRef(null);
+        $this->setPaymentRef(null);
+        $this->setPeriodEnd(null);
+        $this->setPeriodStart(null);
+        $this->setPeriodType(null);
+        $this->setTitle(null);
+        $this->setWithDetails(null);
+        return $this;
+    }
 }

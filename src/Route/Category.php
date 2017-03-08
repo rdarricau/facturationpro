@@ -90,4 +90,15 @@ class Category
         $this->status = $status;
         return $this;
     }
+
+    /**
+     * @return Category
+     */
+    public function reset()
+    {
+        $this->setPage(null);
+        $this->setTitle(null);
+        $this->setStatus(null);
+        return $this;
+    }
 }

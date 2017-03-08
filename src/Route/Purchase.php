@@ -228,4 +228,24 @@ class Purchase
         $this->order = $order;
         return $this;
     }
+
+    /**
+     * @return Purchase
+     */
+    public function reset()
+    {
+        $this->setWithDetails(null);
+        $this->setPage(null);
+        $this->setApiId(null);
+        $this->setApiCustom(null);
+        $this->setCompany(null);
+        $this->setTitle(null);
+        $this->setInvoiceRef(null);
+        $this->setPaymentRef(null);
+        $this->setSerialNumber(null);
+        $this->setPurchaseType(null);
+        $this->setSort(null);
+        $this->setOrder(null);
+        return $this;
+    }
 }

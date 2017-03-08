@@ -90,4 +90,15 @@ class Followup
         $this->status = $status;
         return $this;
     }
+
+    /**
+     * @return Followup
+     */
+    public function reset()
+    {
+        $this->setPage(null);
+        $this->setTitle(null);
+        $this->setStatus(null);
+        return $this;
+    }
 }

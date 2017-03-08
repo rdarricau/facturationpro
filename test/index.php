@@ -25,7 +25,7 @@ $fpro->setFirm(36588);
 // $fpro->customer->setSort(\FacturationPro\FacturationPro::SORT_DESC);
 // $customers = $fpro->customer->getAll();
 // dump($customers);
-$customer = $fpro->customer->get(790184);
+//$customer = $fpro->customer->get(790184);
 // dump($customer);
 // $fpro->quote->setSort(\FacturationPro\FacturationPro::SORT_DESC);
 // $fpro->quote->setCompany("test");
@@ -39,15 +39,20 @@ $customer = $fpro->customer->get(790184);
 // $fpro->invoice->patch($invoice);
 // $invoice = $fpro->invoice->get(1910650);
 // dump($invoice);
-$invoice = new \FacturationPro\Entity\Invoice();
+//$invoice = new \FacturationPro\Entity\Invoice();
 
-$item = new \FacturationPro\Entity\Item();
-$item->setTitle("Détail de la facture")
-    ->setQuantity(10)
-    ->setUnitPrice(200.30)
-    ->setVat(0.20);
+//$item = new \FacturationPro\Entity\Item();
+//$item->setTitle("Détail de la facture")
+//    ->setQuantity(10)
+//    ->setUnitPrice(200.30)
+//    ->setVat(0.20);
 
-$invoice->setTitle("Tentative facture via client")
-        ->setItems(array($item))
-        ->setCustomer($customer);
-$fpro->invoice->post($invoice);
+//$invoice->setTitle("Tentative facture via client")
+//        ->setItems(array($item))
+//        ->setCustomer($customer);
+//$fpro->invoice->post($invoice);
+
+$purchase = $fpro->purchase->get(577061);
+$fpro->purchase->reset();
+dump($purchase->getSupplier());
+dump($purchase);
