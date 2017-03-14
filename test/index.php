@@ -51,7 +51,3 @@ $fpro->setFirm(36588);
 //        ->setItems(array($item))
 //        ->setCustomer($customer);
 //$fpro->invoice->post($invoice);
-
-$purchase = $fpro->purchase->get(577061);
-$fpro->purchase->reset();
-dump($purchase);

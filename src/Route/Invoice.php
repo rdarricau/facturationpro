@@ -100,12 +100,14 @@ class Invoice
             "title" => $this->title,
             "company" => $this->company,
             "bill_type" => $this->bill_type,
-            "period_start" => $this->period_start->format("m/Y"),
-            "period_end" => $this->period_end->format("m/Y"),
             "period_type" => $this->period_type,
             "sort" => $this->sort,
             "order" => $this->order
         );
+        if(isset($this->period_start))
+            $params["period_start"]= $this->period_start->format("m/Y");
+        if(isset($this->period_end))
+            $params["period_end"]= $this->period_end->format("m/Y");
         if(isset($this->customer))
             $params["customer_id"]= $this->customer->getId();
 
