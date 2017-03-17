@@ -53,7 +53,7 @@ class Asset
     public function get($id)
     {
         $params = array();
-        return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
+        return $this->master->get($this->firm,$this->url,$id,$this->entity,"json",$params);
     }
 
     /**

@@ -103,10 +103,10 @@ class Quote
         return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
     }
 
-    public function get($id)
+    public function get($id,$format="json")
     {
         $params = array();
-        return $this->master->get($this->firm,$this->url,$id,$this->entity,$params);
+        return $this->master->get($this->firm,$this->url,$id,$this->entity,$format,$params);
     }
 
     public function post(\FacturationPro\Entity\Quote $quote)

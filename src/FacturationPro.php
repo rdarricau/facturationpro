@@ -14,6 +14,9 @@ class FacturationPro {
     const SORT_DESC = "desc";
     const SORT_ASC = "asc";
 
+    const FORMAT_PDF = "pdf";
+    const FORMAT_JSON = "json";
+
     const ORDER_CREATED = 'created';
     const ORDER_UPDATED = 'updated';
 
@@ -54,9 +57,9 @@ class FacturationPro {
         return $this->parser->parse($this,$response->body,$entityClass);
     }
 
-    public function get($firm, $url,$id,$entityClass, $params=null)
+    public function get($firm, $url,$id,$entityClass,$format,$params=null)
     {
-        $response = \Unirest\Request::get($this->apiUrl . self::url($firm,$url) .'/'.$id. '.json',array(),$params);
+        $response = \Unirest\Request::get($this->apiUrl . self::url($firm,$url) .'/'.$id.".".$format,array(),$params);
         self::getError($response);
         return $this->parser->parse($this,$response->body,$entityClass);
     }
