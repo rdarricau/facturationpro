@@ -27,6 +27,9 @@ class Supplier
     /** @var string **/
     protected $company;
 
+    /** @var bool **/
+    protected $with_sepa;
+    
     /** @var string **/
     protected $sort;
 
@@ -46,6 +49,7 @@ class Supplier
             "api_id" => $this->api_id,
             "api_custom" => $this->api_custom,
             "company" => $this->company,
+            "with_sepa" => $this->with_sepa,
             "sort" => $this->sort,
             "order" => $this->order
         );
@@ -54,7 +58,9 @@ class Supplier
 
     public function get($id)
     {
-        $params = array();
+        $params = array(
+            "with_sepa" => $this->with_sepa
+        );
         return $this->master->get($this->firm,$this->url,$id,$this->entity,"json",$params);
     }
 
@@ -114,6 +120,16 @@ class Supplier
     }
 
     /**
+     * @param bool $with_sepa
+     * @return Customer
+     */
+    public function setWithSepa($with_sepa)
+    {
+        $this->with_sepa = $with_sepa;
+        return $this;
+    }
+    
+    /**
      * @param string $sort
      * @return Supplier
      */
@@ -144,6 +160,7 @@ class Supplier
         $this->setCompany(null);
         $this->setSort(null);
         $this->setOrder(null);
+        $this->setWithSepa(null);
         return $this;
     }
 }
