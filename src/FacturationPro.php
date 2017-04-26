@@ -10,6 +10,7 @@ class FacturationPro {
     public $currentIdFirm;
     public $apiUrl = 'https://www.facturation.pro/';
     public $parser;
+    public $errorDisplay;
 
     const SORT_DESC = "desc";
     const SORT_ASC = "asc";
@@ -20,7 +21,7 @@ class FacturationPro {
     const ORDER_CREATED = 'created';
     const ORDER_UPDATED = 'updated';
 
-    public function __construct($login=null,$pass=null,$service=null,$mail=null)
+    public function __construct($login=null,$pass=null,$service=null,$mail=null,$errorDisplay=0)
     {
         if (!$login) throw new \Error('You must provide a login');
         if (!$pass) throw new \Error('You must provide a pass');
@@ -33,6 +34,7 @@ class FacturationPro {
         $this->pass = $pass;
         $this->service = $service;
         $this->mail = $mail;
+        $this->errorDisplay = $errorDisplay;
 
         $this->account = new \FacturationPro\Route\Account($this);
         $this->asset = new \FacturationPro\Route\Asset($this);
@@ -106,8 +108,14 @@ class FacturationPro {
 
     public function getError($response)
     {
-        if(floor($response->code / 100) >= 4) {
-            throw new \Error($response->raw_body);
+        if($this->errorDisplay)
+        {
+            if($response->raw_body)
+                throw new \Error($response->raw_body);
+            else
+                throw new \Error("Erreur fatale.");
         }
+        else
+            return null;
     }    
 }
