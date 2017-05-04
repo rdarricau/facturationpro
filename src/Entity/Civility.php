@@ -17,5 +17,36 @@ class Civility
 
     /** @var  string */
     protected $title;
-    protected $civility = array("M."=>'Monsieur','Mme'=>'Madame','Mlle'=>'Mademoiselle','Dr'=>'Docteur','Me'=>'Maître','Pr'=>'Professeur');
+
+    CONST CIVILITY_M = "M.";
+    CONST CIVILITY_MME = "Mme";
+    CONST CIVILITY_MLLE = "Mlle";
+    CONST CIVILITY_DR = "Dr";
+    CONST CIVILITY_ME = "Me";
+    CONST CIVILITY_PR = "Pr";
+
+    private $list = array(
+        "M."=>'Monsieur',
+        'Mme'=>'Madame',
+        'Mlle'=>'Mademoiselle',
+        'Dr'=>'Docteur',
+        'Me'=>'Maître',
+        'Pr'=>'Professeur'
+    );
+
+    /** @var string $reference */
+    public function __construct($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    public function getTitle()
+    {
+        return $this->list[$this->reference];
+    }
 }

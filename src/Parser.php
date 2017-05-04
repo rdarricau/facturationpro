@@ -34,6 +34,20 @@ use FacturationPro\Entity\VatExemptionReason;
  */
 class Parser
 {
+    protected $classConstantes = array(
+        "\\FacturationPro\\Entity\\CategoryStatus",
+        "\\FacturationPro\\Entity\\Civility",
+        "\\FacturationPro\\Entity\\Country",
+        "\\FacturationPro\\Entity\\Currency",
+        "\\FacturationPro\\Entity\\FollowupStatus",
+        "\\FacturationPro\\Entity\\Language",
+        "\\FacturationPro\\Entity\\Nature",
+        "\\FacturationPro\\Entity\\PayBefore",
+        "\\FacturationPro\\Entity\\PaymentMode",
+        "\\FacturationPro\\Entity\\QuoteStatus",
+        "\\FacturationPro\\Entity\\VatExemptionReason"
+    );
+
     public function parse($master,$response,$destination)
     {
         if(is_array($response))
@@ -73,12 +87,25 @@ class Parser
                         foreach ($value as &$item)
                             $item = self::object($master, $item, "\\FacturationPro\\Entity\\" . $type);
                     }
+                    else
+                    {
+                        $type = false;
+                        if (preg_match('/@var\s+([\w^\s]+)/', $propDest->getDocComment(), $matches)) {
+                            list(, $type) = $matches;
+                        }
+                        if($type)
+                            $value = self::object($master, $value, "\\FacturationPro\\Entity\\" . $type);
+                    }
                     $propDest->setValue($destination, $value);
                 } else {
                     $destination->$name = $value;
                 }
             }
         }
+        // Cas des constantes
+        elseif(in_array($destination,$this->classConstantes) && isset($sourceObject))
+            return new $destination((string)$sourceObject);
+        // cas généraux
         else
             $destination = $sourceObject;
         return $destination;

@@ -11,8 +11,8 @@ class Category {
     /** @var string **/
  	protected $title;
 
-     /** @var CategoryStatus **/
-     protected $status;
+    /** @var CategoryStatus**/
+    protected $status;
 
     /** @var \DateTime **/
  	protected $created_at;
@@ -45,7 +45,7 @@ class Category {
     }
 
     /**
-     * @return datetime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -53,7 +53,7 @@ class Category {
     }
 
     /**
-     * @return datetime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {

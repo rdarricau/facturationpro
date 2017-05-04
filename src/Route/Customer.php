@@ -87,11 +87,25 @@ class Customer
 
     public function post(\FacturationPro\Entity\Customer $customer)
     {
+        if($customer->getCategory()) $customer->setCategory($customer->getCategory()->getStatus()->getReference());
+        if($customer->getCivility()) $customer->setCivility($customer->getCivility()->getReference());
+        if($customer->getCountry()) $customer->setCountry($customer->getCountry()->getReference());
+        if($customer->getCurrency()) $customer->setCurrency($customer->getCurrency()->getReference());
+        if($customer->getLanguage()) $customer->setLanguage($customer->getLanguage()->getReference());
+        if($customer->getPayBefore()) $customer->setPayBefore($customer->getPayBefore()->getReference());
+        if($customer->getVatExemptionReason()) $customer->setVatExemptionReason($customer->getVatExemptionReason()->getReference());
         return $this->master->post($this->firm,$this->url,$customer,$this->entity,$this);
     }
 
     public function patch(\FacturationPro\Entity\Customer $customer)
     {
+        if($customer->getCategory()) $customer->setCategory($customer->getCategory()->getStatus()->getReference());
+        if($customer->getCivility()) $customer->setCivility($customer->getCivility()->getReference());
+        if($customer->getCountry()) $customer->setCountry($customer->getCountry()->getReference());
+        if($customer->getCurrency()) $customer->setCurrency($customer->getCurrency()->getReference());
+        if($customer->getLanguage()) $customer->setLanguage($customer->getLanguage()->getReference());
+        if($customer->getPayBefore()) $customer->setPayBefore($customer->getPayBefore()->getReference());
+        if($customer->getVatExemptionReason()) $customer->setVatExemptionReason($customer->getVatExemptionReason()->getReference());
         return $this->master->patch($this->firm,$this->url,$customer->getId(),$customer,$this->entity,$this);
     }
 

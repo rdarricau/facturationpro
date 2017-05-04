@@ -12,10 +12,35 @@ class QuoteStatus
     /** @var  \FacturationPro\FacturationPro */
     protected $master;
 
-    /** @var  int */
-    protected $id;
+    /** @var  string */
+    protected $reference;
 
     /** @var  string */
     protected $title;
-    protected $quote_status = array("0"=>'En attente','1'=>'Accepté','9'=>'Refusé');
+
+    CONST QUOTE_STATUS_EN_ATTENTE = "0";
+    CONST QUOTE_STATUS_ACCEPTE = "1";
+    CONST QUOTE_STATUS_REFUSE = "9";
+
+    protected $list = array(
+        "0"=>'En attente',
+        '1'=>'Accepté',
+        '9'=>'Refusé'
+    );
+
+    /** @var string $reference */
+    public function __construct($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    public function getTitle()
+    {
+        return $this->list[$this->reference];
+    }
 }

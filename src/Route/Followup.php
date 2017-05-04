@@ -48,11 +48,13 @@ class Followup
 
     public function post(\FacturationPro\Entity\Followup $followup)
     {
+        if($followup->getStatus()) $followup->setStatus($followup->getStatus()->getReference());
         return $this->master->post($this->firm,$this->url,$followup,$this->entity,$this);
     }
 
     public function patch(\FacturationPro\Entity\Followup $followup)
     {
+        if($followup->getStatus()) $followup->setStatus($followup->getStatus()->getReference());
         return $this->master->patch($this->firm,$this->url,$followup->getId(),$followup,$this->entity,$this);
     }
 

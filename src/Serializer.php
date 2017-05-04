@@ -26,6 +26,7 @@ class Serializer
 
     public function object($object,$depth, $route) {
         if($depth > 2) return;
+        dump($object);
         $reflectionClass = new \ReflectionClass(get_class($object));
         $array = array();
         foreach ($reflectionClass->getProperties() as $property) {
@@ -34,7 +35,8 @@ class Serializer
             if(is_array($value))
             {
                 foreach ($value as &$element) {
-                    $element = self::object($element,$depth + 1, $route);
+                    if(is_object($element) && strpos(get_class($element),"FacturationPro") !== false)
+                        $element = self::object($element,$depth + 1, $route);
                 }
             }
             elseif(is_object($value) && strpos(get_class($value),"FacturationPro") !== false)

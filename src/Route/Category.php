@@ -48,11 +48,13 @@ class Category
 
     public function post(\FacturationPro\Entity\Category $category)
     {
+        if($category->getStatus()) $category->setStatus($category->getStatus()->getReference());
         return $this->master->post($this->firm,$this->url,$category,$this->entity,$this);
     }
 
     public function patch(\FacturationPro\Entity\Category $category)
     {
+        if($category->getStatus()) $category->setStatus($category->getStatus()->getReference());
         return $this->master->patch($this->firm,$this->url,$category->getId(),$category,$this->entity,$this);
     }
 

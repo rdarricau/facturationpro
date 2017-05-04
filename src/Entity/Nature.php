@@ -12,11 +12,37 @@ class Nature
     /** @var  \FacturationPro\FacturationPro */
     protected $master;
 
-    /** @var  int */
-    protected $id;
+    /** @var  string */
+    protected $reference;
+
     /** @var  string */
     protected $title;
 
-    protected $nature = array("1" => "Vente",'2'=>'BIC - Prestations de service commerciales ou artisanales','3'=> 'BNC - Prestation non commerciale','9'=> 'Non applicable');
+    CONST NATURE_VENTE = "1";
+    CONST NATURE_BIC_PRESTATIONS_DE_SERVICE_COMMERCIALES_OU_ARTISANALES = "2";
+    CONST NATURE_BNC_PRESTATION_NON_COMMERCIALE = "3";
+    CONST NATURE_NON_APPLICABLE = "9";
 
+    protected $list = array(
+        "1" => "Vente",
+        '2'=>'BIC - Prestations de service commerciales ou artisanales',
+        '3'=> 'BNC - Prestation non commerciale',
+        '9'=> 'Non applicable'
+    );
+
+    /** @var string $reference */
+    public function __construct($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    public function getTitle()
+    {
+        return $this->list[$this->reference];
+    }
 }

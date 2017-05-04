@@ -17,5 +17,28 @@ class Language
 
     /** @var  string */
     protected $title;
-    protected $language = array("fr" => "Français",'en'=>'Anglais');
+
+    CONST LANGUAGE_FRANCAIS = "fr";
+    CONST LANGUAGE_ANGLAIS = "en";
+
+    protected $list = array(
+        "fr" => "Français",
+        'en'=>'Anglais'
+    );
+
+    /** @var string $reference */
+    public function __construct($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    public function getTitle()
+    {
+        return $this->list[$this->reference];
+    }
 }

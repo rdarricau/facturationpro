@@ -122,11 +122,13 @@ class Invoice
 
     public function post(\FacturationPro\Entity\Invoice $invoice)
     {
+        if($invoice->getPaymentMode()) $invoice->setPaymentMode($invoice->getPaymentMode()->getReference());
         return $this->master->post($this->firm,$this->url,$invoice,$this->entity,$this);
     }
 
     public function patch(\FacturationPro\Entity\Invoice $invoice)
     {
+        if($invoice->getPaymentMode()) $invoice->setPaymentMode($invoice->getPaymentMode()->getReference());
         return $this->master->patch($this->firm,$this->url,$invoice->getId(),$invoice,$this->entity,$this);
     }
 
