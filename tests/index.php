@@ -34,12 +34,16 @@ $fpro->setFirm(36588);
 // dump($quotes);
 $invoices = $fpro->invoice->getAll();
 dump($invoices);
-//$invoice = $fpro->invoice->get(1910650,\FacturationPro\FacturationPro::FORMAT_PDF);
-//dump($invoice);
-// $invoice->setTitle("Coucou coucoucoucuoccuocuc");
-// $fpro->invoice->patch($invoice);
-// $invoice = $fpro->invoice->get(1910650);
-// dump($invoice);
+/** @var \FacturationPro\Entity\Invoice $invoice */
+$invoice = $fpro->invoice->get(2022672);
+dump($invoice);
+$invoice->setItems(null);
+$invoice->setPaymentMode(new \FacturationPro\Entity\PaymentMode(\FacturationPro\Entity\PaymentMode::PAYMENT_MODE_PRELEVEMENT));
+$invoice->setPaidOn(new \DateTime());
+dump($invoice);
+dump($fpro->invoice->patch($invoice));
+$invoice = $fpro->invoice->get(2022672);
+dump($invoice);
 //$invoice = new \FacturationPro\Entity\Invoice();
 
 //$item = new \FacturationPro\Entity\Item();

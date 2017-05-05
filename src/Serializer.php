@@ -40,6 +40,8 @@ class Serializer
             }
             elseif(is_object($value) && strpos(get_class($value),"FacturationPro") !== false)
                 $value = self::object($value,$depth + 1, $route);
+            elseif($value instanceof \DateTime)
+                $value = $value->format("Y-m-d");
             if(method_exists($object,"set".str_replace("_","",ucwords($property->getName(),"_"))) && !is_null($value))
                 $array[$property->getName()] = $value;
         }
