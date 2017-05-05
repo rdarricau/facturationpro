@@ -26,7 +26,6 @@ class Serializer
 
     public function object($object,$depth, $route) {
         if($depth > 2) return;
-        dump($object);
         $reflectionClass = new \ReflectionClass(get_class($object));
         $array = array();
         foreach ($reflectionClass->getProperties() as $property) {
