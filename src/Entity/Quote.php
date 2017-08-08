@@ -14,6 +14,9 @@ class Quote {
     /** @var  Customer */
  	protected $customer;
 
+    /** @var  integer */
+    protected $customer_id;
+
     /** @var  Language */
  	protected $language;
 
@@ -749,6 +752,24 @@ class Quote {
     public function setIgnoreQuote($ignore_quote)
     {
         $this->ignore_quote = $ignore_quote;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCustomerId()
+    {
+        return $this->customer_id;
+    }
+
+    /**
+     * @param int $customer_id
+     * @return Quote
+     */
+    public function setCustomerId($customer_id)
+    {
+        $this->customer_id = $customer_id;
         return $this;
     }
 }
