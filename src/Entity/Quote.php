@@ -172,7 +172,7 @@ class Quote {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getInvoicedOn()
     {
@@ -180,7 +180,7 @@ class Quote {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getTermOn()
     {
@@ -340,7 +340,7 @@ class Quote {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getCreatedAt()
     {
@@ -348,7 +348,7 @@ class Quote {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getUpdatedAt()
     {
@@ -436,7 +436,7 @@ class Quote {
     }
 
     /**
-     * @return DateTime
+     * @return \DateTime
      */
     public function getHardDeleteOn()
     {
@@ -449,6 +449,16 @@ class Quote {
     public function getItems()
     {
         return $this->items;
+    }
+
+    /**
+     * @param Item[] $items
+     * @return Quote
+     */
+    public function setItems($items)
+    {
+        $this->items = $items;
+        return $this;
     }
 
     /**
