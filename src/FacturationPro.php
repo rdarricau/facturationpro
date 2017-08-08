@@ -108,7 +108,7 @@ class FacturationPro {
 
     public function getError($response)
     {
-        if($this->errorDisplay)
+        if($this->errorDisplay && $response->code >= 300)
         {
             if($response->raw_body)
                 throw new \Error($response->raw_body);

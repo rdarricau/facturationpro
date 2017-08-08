@@ -194,6 +194,7 @@ class Item {
     public function setProductId($product_id)
     {
         $this->product_id = $product_id;
+        return $this;
     }
 
     /**

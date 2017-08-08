@@ -477,6 +477,7 @@ class Quote {
      */
     public function setCustomer($customer)
     {
+        $this->customer_id = $customer->getId();
         $this->customer = $customer;
         return $this;
     }
