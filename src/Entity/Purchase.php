@@ -527,6 +527,7 @@ class Purchase {
      */
     public function setCategory($category)
     {
+        $this->category_id = $category->getId();
         $this->category = $category;
         return $this;
     }
