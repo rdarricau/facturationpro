@@ -169,12 +169,14 @@ class Invoice {
         return $this->id;
     }
 
+
     /**
      * @return Customer
      */
     public function getCustomer()
     {
-        return $this->customer;
+        $customer = $this->master->customer->get($this->customer_id);
+        return $customer;
     }
 
     /**
