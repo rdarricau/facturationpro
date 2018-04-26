@@ -23,6 +23,9 @@ class Purchase {
     /** @var  float */
  	protected $total_with_vat;
 
+    /** @var  integer */
+    protected $category_id;
+
     /** @var  float */
  	protected $vat_amount;
 
@@ -589,6 +592,24 @@ class Purchase {
     public function setApiCustom($api_custom)
     {
         $this->api_custom = $api_custom;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCategoryId()
+    {
+        return $this->category_id;
+    }
+
+    /**
+     * @param int $category_id
+     * @return Purchase
+     */
+    public function setCategoryId($category_id)
+    {
+        $this->category_id = $category_id;
         return $this;
     }
 }
