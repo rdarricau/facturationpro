@@ -612,5 +612,23 @@ class Purchase {
         $this->category_id = $category_id;
         return $this;
     }
+
+    /**
+     * @return int
+     */
+    public function getSupplierId()
+    {
+        return $this->supplier_id;
+    }
+
+    /**
+     * @param int $supplier_id
+     * @return Purchase
+     */
+    public function setSupplierId($supplier_id)
+    {
+        $this->supplier_id = $supplier_id;
+        return $this;
+    }
 }
 ?>
