@@ -123,6 +123,7 @@ class Invoice
     public function post(\FacturationPro\Entity\Invoice $invoice)
     {
         if($invoice->getPaymentMode()) $invoice->setPaymentMode($invoice->getPaymentMode()->getReference());
+        if($invoice->getVatExemption()) $invoice->setVatExemption($invoice->getVatExemption()->getTitle());
         return $this->master->post($this->firm,$this->url,$invoice,$this->entity,$this);
     }
 
