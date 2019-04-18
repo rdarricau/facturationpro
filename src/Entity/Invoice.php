@@ -53,11 +53,8 @@ class Invoice {
     /** @var  float */
  	protected $rebate_percentage;
 
-    /** @var  VatExemptionReason */
- 	protected $vat_exemption_reason;
-
-    /** @var  string */
- 	protected $vat_exemption_other;
+    /** @var  VatExemption */
+ 	protected $vat_exemption;
 
     /** @var  string */
  	protected $vat_country;
@@ -662,22 +659,20 @@ class Invoice {
     }
 
     /**
-     * @param VatExemptionReason $vat_exemption_reason
-     * @return Invoice
+     * @return VatExemption
      */
-    public function setVatExemptionReason($vat_exemption_reason)
+    public function getVatExemption()
     {
-        $this->vat_exemption_reason = $vat_exemption_reason;
-        return $this;
+        return $this->vat_exemption;
     }
 
     /**
-     * @param string $vat_exemption_other
+     * @param VatExemption $vat_exemption
      * @return Invoice
      */
-    public function setVatExemptionOther($vat_exemption_other)
+    public function setVatExemption($vat_exemption)
     {
-        $this->vat_exemption_other = $vat_exemption_other;
+        $this->vat_exemption = $vat_exemption;
         return $this;
     }
 
