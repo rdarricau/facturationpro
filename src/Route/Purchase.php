@@ -1,4 +1,5 @@
 <?php
+
 namespace FacturationPro\Route;
 
 /**
@@ -52,11 +53,22 @@ class Purchase
     CONST PURCHASE_TYPE_PREPAID = "prepaid";
     CONST PURCHASE_TYPE_FORECAST = "forecast";
 
-    /** @var string **/
+    CONST PERIOD_TYPE_BILLED = 'billed';
+
+    /** @var string * */
     protected $sort;
 
     /** @var  string */
     protected $order;
+
+    /** @var string */
+    protected $periodStart;
+
+    /** @var string */
+    protected $periodEnd;
+
+    /** @var string */
+    protected $periodType;
 
     CONST ORDER_PAID = "paid";
     CONST ORDER_TOTAL = "total";
@@ -70,7 +82,7 @@ class Purchase
 
     public function getAll()
     {
-        $params = array(
+        $params = [
             "with_details" => $this->with_details,
             "page" => $this->page,
             "api_id" => $this->api_id,
@@ -82,31 +94,34 @@ class Purchase
             "serial_number" => $this->serial_number,
             "purchase_type" => $this->purchase_type,
             "sort" => $this->sort,
-            "order" => $this->order
-        );
+            "order" => $this->order,
+            "period_type" => $this->periodType,
+            "period_start" => $this->periodStart,
+            "period_end" => $this->periodEnd
+        ];
 
-        return $this->master->getAll($this->firm,$this->url, $this->entity,$params);
-    }    
+        return $this->master->getAll($this->firm, $this->url, $this->entity, $params);
+    }
 
     public function get($id)
     {
         $params = array();
-        return $this->master->get($this->firm,$this->url,$id,$this->entity,"json",$params);
+        return $this->master->get($this->firm, $this->url, $id, $this->entity, "json", $params);
     }
 
     public function post(\FacturationPro\Entity\Purchase $purchase)
     {
-        return $this->master->post($this->firm,$this->url,$purchase,$this->entity,$this);
+        return $this->master->post($this->firm, $this->url, $purchase, $this->entity, $this);
     }
 
     public function patch(\FacturationPro\Entity\Purchase $purchase)
     {
-        return $this->master->patch($this->firm,$this->url,$purchase->getId(),$purchase,$this->entity,$this);
+        return $this->master->patch($this->firm, $this->url, $purchase->getId(), $purchase, $this->entity, $this);
     }
 
     public function remove(\FacturationPro\Entity\Purchase $purchase)
     {
-        return $this->master->remove($this->firm,$this->url,$purchase->getId());
+        return $this->master->remove($this->firm, $this->url, $purchase->getId());
     }
 
     /**
@@ -230,6 +245,36 @@ class Purchase
     }
 
     /**
+     * @param string $periodStart
+     * @return Purchase
+     */
+    public function setPeriodStart($periodStart)
+    {
+        $this->periodStart = $periodStart;
+        return $this;
+    }
+
+    /**
+     * @param string $periodEnd
+     * @return Purchase
+     */
+    public function setPeriodEnd($periodEnd)
+    {
+        $this->periodEnd = $periodEnd;
+        return $this;
+    }
+
+    /**
+     * @param string $periodType
+     * @return Purchase
+     */
+    public function setPeriodType($periodType)
+    {
+        $this->periodType = $periodType;
+        return $this;
+    }
+
+    /**
      * @return Purchase
      */
     public function reset()
@@ -246,6 +291,9 @@ class Purchase
         $this->setPurchaseType(null);
         $this->setSort(null);
         $this->setOrder(null);
+        $this->setPeriodStart(null);
+        $this->setPeriodEnd(null);
+        $this->setPeriodType(null);
         return $this;
     }
 }
