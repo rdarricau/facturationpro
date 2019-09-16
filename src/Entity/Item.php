@@ -1,48 +1,53 @@
 <?php
+
 namespace FacturationPro\Entity;
 
-class Item {
+class Item
+{
     /** @var  \FacturationPro\FacturationPro */
     protected $master;
 
-    /** @var integer */
-	protected $id;
+    /** @var string */
+    protected $id;
 
     /** @var float */
- 	protected $quantity;
+    protected $quantity;
 
     /** @var string */
- 	protected $title;
+    protected $title;
 
     /** @var float */
- 	protected $unit_price;
+    protected $unit_price;
 
     /** @var float */
-  	protected $vat;
+    protected $vat;
 
     /** @var Product */
- 	protected $product;
+    protected $product;
 
     /** @var integer */
     protected $product_id;
 
     /** @var integer */
- 	protected $position;
+    protected $position;
 
     /** @var float */
- 	protected $total;
+    protected $total;
 
     /** @var boolean */
- 	protected $optional;
+    protected $optional;
 
     /** @var string */
- 	protected $style;
+    protected $style;
 
     /** @var Nature */
-	protected $nature;
+    protected $nature;
+
+    /** @var string */
+    protected $_destroy;
 
     /**
-     * @return int
+     * @return string
      */
     public function getId()
     {
@@ -236,5 +241,37 @@ class Item {
         $this->nature = $nature;
         return $this;
     }
+
+    /**
+     * @param bool $destroy
+     * @return Item
+     */
+    public function setDestroy(): Item
+    {
+        $this->_destroy = "1";
+        $this->quantity = null;
+        $this->nature = null;
+        $this->style = null;
+        $this->optional = null;
+        $this->position = null;
+        $this->product_id = null;
+        $this->product = null;
+        $this->vat = null;
+        $this->unit_price = null;
+        $this->title = null;
+        $this->quantity = null;
+        return $this;
+    }
+
+    /**
+     * @param string $id
+     * @return Item
+     */
+    public function setId(string $id): Item
+    {
+        $this->id = $id;
+        return $this;
+    }
 }
+
 ?>
