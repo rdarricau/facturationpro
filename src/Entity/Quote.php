@@ -1,135 +1,137 @@
 <?php
+
 namespace FacturationPro\Entity;
 
-class Quote {
+class Quote
+{
     /** @var  \FacturationPro\FacturationPro */
     protected $master;
 
     /** @var integer */
- 	protected $id;
+    protected $id;
 
     /** @var  string */
     protected $title;
 
     /** @var  Customer */
- 	protected $customer;
+    protected $customer;
 
     /** @var  integer */
     protected $customer_id;
 
     /** @var  Language */
- 	protected $language;
+    protected $language;
 
     /** @var  Category */
- 	protected $category;
+    protected $category;
 
     /** @var  Followup */
- 	protected $followup;
+    protected $followup;
 
     /** @var \DateTime */
- 	protected $invoiced_on;
+    protected $invoiced_on;
 
     /** @var \DateTime */
- 	protected $term_on;
+    protected $term_on;
 
     /** @var  boolean */
- 	protected $draft;
+    protected $draft;
 
     /** @var  float */
- 	protected $total;
+    protected $total;
 
     /** @var  float */
- 	protected $total_with_vat;
+    protected $total_with_vat;
 
     /** @var  Currency */
- 	protected $currency;
+    protected $currency;
 
     /** @var  float */
- 	protected $rebate_percentage;
+    protected $rebate_percentage;
 
     /** @var  string */
     protected $vat_exemption;
 
     /** @var  VatExemptionReason */
- 	protected $vat_exemption_reason;
+    protected $vat_exemption_reason;
 
     /** @var  string */
- 	protected $vat_exemption_other;
+    protected $vat_exemption_other;
 
     /** @var  string */
- 	protected $vat_country;
+    protected $vat_country;
 
     /** @var  string */
- 	protected $tax_title;
+    protected $tax_title;
 
     /** @var  float */
- 	protected $tax_percent;
+    protected $tax_percent;
 
     /** @var  float */
- 	protected $penalty;
+    protected $penalty;
 
     /** @var  PayBefore */
- 	protected $pay_before;
+    protected $pay_before;
 
     /** @var  float */
- 	protected $discount;
+    protected $discount;
 
     /** @var  string */
- 	protected $precompte;
+    protected $precompte;
 
     /** @var  string */
- 	protected $precompte_title;
+    protected $precompte_title;
 
     /** @var  boolean */
- 	protected $service_personne;
+    protected $service_personne;
 
     /** @var  string */
- 	protected $accounting_entry;
+    protected $accounting_entry;
 
     /** @var  string */
- 	protected $information;
+    protected $information;
 
     /** @var  string */
- 	protected $internal_note;
+    protected $internal_note;
 
     /** @var \DateTime */
- 	protected $created_at;
+    protected $created_at;
 
     /** @var \DateTime */
- 	protected $updated_at;
+    protected $updated_at;
 
     /** @var  Customer */
- 	protected $user;
+    protected $user;
 
     /** @var string */
- 	protected $api_id;
+    protected $api_id;
 
     /** @var string */
- 	protected $api_custom;
+    protected $api_custom;
 
     /** @var QuoteStatus */
-	protected $quote_status;
+    protected $quote_status;
 
     /** @var  string */
- 	protected $quote_ref;
+    protected $quote_ref;
 
     /** @var  boolean */
- 	protected $ignore_quote;
+    protected $ignore_quote;
 
     /** @var  boolean */
- 	protected $fully_invoiced;
+    protected $fully_invoiced;
 
     /** @var  float */
- 	protected $amount_invoiced;
+    protected $amount_invoiced;
 
     /** @var  Invoice[] */
- 	protected $invoice_ids;
+    protected $invoice_ids;
 
     /** @var  boolean */
- 	protected $soft_deleted;
+    protected $soft_deleted;
 
     /** @var \DateTime */
- 	protected $hard_delete_on;
+    protected $hard_delete_on;
 
     /** @var Item[] */
     protected $items;
@@ -772,5 +774,14 @@ class Quote {
         $this->customer_id = $customer_id;
         return $this;
     }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 }
+
 ?>
