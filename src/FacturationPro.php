@@ -2,6 +2,7 @@
 
 namespace FacturationPro;
 
+use FacturationPro\Route\Invoice\Refund;
 use FacturationPro\Route\Quote\Invoice;
 
 class FacturationPro
@@ -52,6 +53,7 @@ class FacturationPro
         $this->quote = new \FacturationPro\Route\Quote($this);
         $this->supplier = new \FacturationPro\Route\Supplier($this);
         $this->invoiceQuote = new Invoice($this);
+        $this->refund = new Refund($this);
 
         \Unirest\Request::auth($this->login, $this->pass);
         \Unirest\Request::defaultHeader('User-Agent', $this->service . " (" . $this->mail . ")");
