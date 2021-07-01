@@ -55,7 +55,7 @@ class Product
             "sort" => $this->sort,
             "order" => $this->order
         );
-        return $this->master->getAll($this->firm,$this->url, $this->entity);
+        return $this->master->getAll($this->firm,$this->url, $this->entity, $params);
     }    
 
     public function get($id)
